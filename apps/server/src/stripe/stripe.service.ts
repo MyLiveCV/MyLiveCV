@@ -50,7 +50,11 @@ export class StripeService {
     return this.prisma.product.findMany({
       where: { active: true },
       include: {
-        prices: true,
+        prices: {
+          where: {
+            active: true,
+          },
+        },
       },
     });
   }
@@ -108,6 +112,8 @@ export class StripeService {
 
     const metadata = {
       appUserId: userId,
+      appPriceId: priceId,
+      appPriceType: price.pricingType,
     };
 
     // Check If customer exist otherwise create a customer and map the user Id
@@ -126,6 +132,7 @@ export class StripeService {
         customer_update: {
           address: "auto",
         },
+        phone_number_collection: { enabled: true },
         line_items: [
           {
             price: price.id,
@@ -150,6 +157,7 @@ export class StripeService {
         customer_update: {
           address: "auto",
         },
+        phone_number_collection: { enabled: true },
         line_items: [
           {
             price: price.id,
@@ -158,8 +166,8 @@ export class StripeService {
         ],
         mode: "payment",
         allow_promotion_codes: true,
-        success_url: `${this.frontendUrl}/success`,
-        cancel_url: `${this.frontendUrl}/cancel`,
+        success_url: `${this.frontendUrl}/dashboard/settings?payment=success`,
+        cancel_url: `${this.frontendUrl}/pricing?payment=failed`,
       });
       sessionId = session.id;
     }
@@ -204,12 +212,21 @@ export class StripeService {
             const checkoutSession = event.data.object as Stripe.Checkout.Session;
             if (checkoutSession.mode === "subscription") {
               const subscriptionId = checkoutSession.subscription;
+              // console.log(checkoutSession);
               await this.manageSubscriptionStatusChange(
                 subscriptionId as string,
                 checkoutSession.customer as string,
                 true,
               );
+            } else if (checkoutSession.mode === "payment") {
+              console.log("checkoutSession", checkoutSession);
+              const paymentId = checkoutSession.id;
+              await this.managePaymentStatusChange(paymentId, checkoutSession.customer as string);
             }
+            break;
+          case "checkout.session.async_payment_succeeded":
+            const asyncCheckoutSession = event.data.object as Stripe.Checkout.Session;
+            const paymentId = asyncCheckoutSession.id;
             break;
           default:
             throw new Error("Unhandled relevant event!");
@@ -304,8 +321,11 @@ export class StripeService {
     await this.prisma.subscription.upsert({
       where: {
         id: subscription.id,
+        userId: userId,
       },
+      // Create if subscription is not exists for user
       create: {
+        id: subscription.id,
         userId: userId,
         metadata: subscription.metadata,
         status: subscription.status,
@@ -331,9 +351,8 @@ export class StripeService {
           ? this.utils.toDateTime(subscription.trial_end).toISOString()
           : null,
       },
+      // Update the details for the existing subscription status
       update: {
-        id: subscription.id,
-        userId: userId,
         metadata: subscription.metadata,
         status: subscription.status,
         priceId: subscription.items.data[0].price.id,
@@ -371,8 +390,66 @@ export class StripeService {
       );
   };
 
+  managePaymentStatusChange = async (paymentId: string, customerId: string) => {
+    // Get customer's UUID from mapping table.
+    const customerData = await this.prisma.customer.findFirstOrThrow({
+      where: {
+        stripeCustomerId: customerId,
+      },
+    });
+
+    const { id: userId } = customerData!;
+
+    const session = await this.stripe.checkout.sessions.retrieve(paymentId, {
+      expand: ["line_items"],
+    });
+
+    await this.prisma.payment.upsert({
+      where: {
+        id: session.id,
+        userId: userId,
+      },
+      // Create if subscription is not exists for user
+      create: {
+        id: session.id,
+        userId: userId,
+        metadata: session.metadata || "{}",
+        status: session.status ?? "open",
+        paymentStatus: session.payment_status,
+        priceId: session.line_items?.data?.[0]?.price?.id ?? session.metadata?.["appPriceId"] ?? "",
+        quantity: 1,
+        paymentIntent: session.payment_intent as string,
+        expiresAt: this.utils.toDateTime(session.expires_at).toISOString(),
+      },
+      // Update the details for the existing subscription status
+      update: {
+        metadata: session.metadata ?? "{}",
+        status: session.status ?? "open",
+        paymentStatus: session.payment_status,
+        quantity: 1,
+        paymentIntent: session.payment_intent as string,
+      },
+    });
+    if (session.payment_status === "paid") {
+      // TODO: add the logic
+      await this.fullfilOrder(userId);
+      console.log(`Inserted/updated payment [${paymentId}] for user [${userId}]`);
+    }
+  };
+
+  /**
+   * Fullfil the order after the payment
+   * @param userId
+   */
+  fullfilOrder = async (userId: string) => {
+    console.log("fullfil order");
+  };
+
   /**
    * Copies the billing details from the payment method to the customer object.
+   * @param userId
+   * @param payment_method
+   * @returns promise
    */
   copyBillingDetailsToCustomer = async (userId: string, payment_method: Stripe.PaymentMethod) => {
     //Todo: check this assertion

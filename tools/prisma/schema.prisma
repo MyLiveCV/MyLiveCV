@@ -40,6 +40,14 @@ enum PaymentStatus {
   past_due
   unpaid
   paused
+  paid
+  no_payment_required
+}
+
+enum OneTimeStatus {
+  complete
+  expired
+  open
 }
 
 model User {
@@ -60,6 +68,8 @@ model User {
   resumes          Resume[]
   customer         Customer?
   subscription     Subscription[]
+  payment          Payment[]
+  // wallet           Wallet[]
 }
 
 model Secrets {
@@ -76,17 +86,23 @@ model Secrets {
 }
 
 model Resume {
-  id         String     @id @default(cuid())
-  title      String
-  slug       String
-  jobTitle   String?
-  data       Json       @default("{}")
+  id       String  @id @default(cuid())
+  title    String
+  slug     String
+  jobTitle String?
+  data     Json    @default("{}")
+
   visibility Visibility @default(private)
   locked     Boolean    @default(false)
-  userId     String
-  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
-  createdAt  DateTime   @default(now())
-  updatedAt  DateTime   @updatedAt
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  views     Int? @default(0)
+  downloads Int? @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   @@unique([userId, id])
   @@unique([userId, slug])
@@ -130,10 +146,11 @@ model Price {
   metadata        Json?       @default("{}")
 
   subscription Subscription[]
+  payment      Payment[]
 }
 
 model Subscription {
-  id       String        @id @default(cuid())
+  id       String        @id
   userId   String
   user     User          @relation(fields: [userId], references: [id], onDelete: Cascade)
   status   PaymentStatus
@@ -154,6 +171,41 @@ model Subscription {
 
   @@index(fields: [userId])
 }
+
+model Payment {
+  id            String        @id
+  userId        String
+  user          User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  status        OneTimeStatus
+  paymentStatus PaymentStatus
+  metadata      Json?         @default("{}")
+  priceId       String
+  price         Price         @relation(fields: [priceId], references: [id], onDelete: Cascade)
+
+  quantity      Int
+  paymentIntent String
+  createdAt     DateTime @default(now())
+  expiresAt     DateTime
+
+  @@index(fields: [userId])
+}
+
+// model Wallet {
+//   id            String               @id
+//   userId        String
+//   user          User                 @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+//   unlimitedResume Boolean @default(false)
+//   resumeAllowed Int?        @default(0)
+//   resumePosted  Int?        @default(0)
+
+//   active      Boolean @default(false)
+
+//   createdAt     DateTime @default(now())
+//   expiresAt     DateTime
+
+//   @@index(fields: [userId])
+// }
 
 model JobTitle {
   id    String @id @default(cuid())
