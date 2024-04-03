@@ -15,8 +15,9 @@ type Props = {
 
 export const Product = ({ products }: Props) => {
   const [product, setProduct] = useState(() => products[0]);
-  const loading = "";
+  const [isSessionLoading, setIsSessionLoading] = useState(false);
   const handleCheckout = async (price: PriceDto) => {
+    setIsSessionLoading(true);
     const { sessionId } = await createCheckoutSession({
       priceId: price.id,
       quantity: 1,
@@ -24,6 +25,7 @@ export const Product = ({ products }: Props) => {
 
     const stripe = await getStripe();
     stripe?.redirectToCheckout({ sessionId });
+    setIsSessionLoading(false);
   };
   return (
     <section className="">
@@ -174,11 +176,11 @@ export const Product = ({ products }: Props) => {
                 <Button
                   asChild
                   size="lg"
-                  disabled={!!loading}
+                  disabled={!!isSessionLoading}
                   onClick={() => handleCheckout(price)}
                 >
                   <button>
-                    {loading ? <CircleNotch className="animate-spin" /> : <StripeLogo />}{" "}
+                    {isSessionLoading ? <CircleNotch className="animate-spin" /> : <StripeLogo />}{" "}
                     {price.pricingType === "recurring" ? t`Subscribe Now` : t`Buy Now`}
                   </button>
                 </Button>

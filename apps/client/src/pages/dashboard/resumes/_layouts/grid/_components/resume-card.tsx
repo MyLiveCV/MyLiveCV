@@ -27,7 +27,6 @@ import dayjs from "dayjs";
 import { AnimatePresence, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-import { useResumePreview } from "@/client/services/resume/preview";
 import { useDialog } from "@/client/stores/dialog";
 
 import { BaseCard } from "./base-card";
@@ -41,7 +40,9 @@ export const ResumeCard = ({ resume }: Props) => {
   const { open } = useDialog<ResumeDto>("resume");
   const { open: lockOpen } = useDialog<ResumeDto>("lock");
 
-  const { url, loading } = useResumePreview(resume.id);
+  // const { url, loading } = useResumePreview(resume.id);
+  const url = "";
+  const loading = false;
 
   const lastUpdated = dayjs().to(resume.updatedAt);
 

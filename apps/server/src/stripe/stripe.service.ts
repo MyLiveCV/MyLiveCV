@@ -126,7 +126,8 @@ export class StripeService {
     let sessionId;
     if (price.pricingType === "recurring") {
       const session = await this.stripe.checkout.sessions.create({
-        payment_method_types: ["card"],
+        // will be managed from dashboard
+        // payment_method_types: ["card"],
         billing_address_collection: "required",
         customer: customerId,
         customer_update: {
@@ -145,13 +146,14 @@ export class StripeService {
           // trial_period_days: 1,
           metadata,
         },
-        success_url: `${this.frontendUrl}/dashboard/settings?payment=success`,
-        cancel_url: `${this.frontendUrl}/pricing?payment=failed`,
+        success_url: `${this.frontendUrl}/dashboard/settings?payment=success&session_id={CHECKOUT_SESSION_ID}",`,
+        cancel_url: `${this.frontendUrl}/pricing?payment=failed&session_id={CHECKOUT_SESSION_ID}`,
       });
       sessionId = session.id;
     } else if (price.pricingType === "one_time") {
       const session = await this.stripe.checkout.sessions.create({
-        payment_method_types: ["card"],
+        // will be managed from dashboard
+        // payment_method_types: ["card"],
         billing_address_collection: "required",
         customer: customerId,
         customer_update: {
@@ -166,8 +168,8 @@ export class StripeService {
         ],
         mode: "payment",
         allow_promotion_codes: true,
-        success_url: `${this.frontendUrl}/dashboard/settings?payment=success`,
-        cancel_url: `${this.frontendUrl}/pricing?payment=failed`,
+        success_url: `${this.frontendUrl}/dashboard/settings?payment=success&session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${this.frontendUrl}/pricing?payment=failed&session_id={CHECKOUT_SESSION_ID}`,
       });
       sessionId = session.id;
     }
