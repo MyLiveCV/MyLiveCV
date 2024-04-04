@@ -21,15 +21,20 @@ export class RecommendationsService {
     return this.utils.getCachedOrSet(
       `recommendations:${title}:${type}`,
       async () => {
+        console.log(title, type);
         // Get Job Title from DB
         let jt = await this.prisma.jobTitle.findFirst({
           where: {
-            title: title,
+            title: {
+              equals: title,
+              mode: "insensitive",
+            },
           },
           select: {
             id: true,
           },
         });
+        console.log(jt);
         // Job Title: If Not exist, add Job Title and Recommendations
         if (!jt) {
           const palmResponse = await this.palmService.getRecommendation(title, type);
