@@ -58,6 +58,7 @@ export class StripeService {
       },
     });
   }
+
   findAllPrices() {
     return this.prisma.price.findMany({
       where: { active: true },
@@ -70,11 +71,26 @@ export class StripeService {
       },
     });
   }
+
   findAllSubscriptions(userId: string) {
     return this.prisma.subscription.findMany({
       where: { userId: userId },
       include: {
         price: true,
+        user: true,
+      },
+    });
+  }
+
+  findActiveSubscription(userId: string) {
+    return this.prisma.subscription.findFirst({
+      where: { userId: userId, status: "active" },
+      include: {
+        price: {
+          include: {
+            product: true,
+          },
+        },
         user: true,
       },
     });
@@ -244,6 +260,7 @@ export class StripeService {
   }
 
   upsertProductRecord = async (product: Stripe.Product) => {
+    console.log(product);
     await this.prisma.product.upsert({
       where: {
         id: product.id,

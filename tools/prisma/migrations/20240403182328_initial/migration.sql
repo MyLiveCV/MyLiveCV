@@ -11,7 +11,10 @@ CREATE TYPE "PricingType" AS ENUM ('one_time', 'recurring');
 CREATE TYPE "Interval" AS ENUM ('day', 'week', 'month', 'year');
 
 -- CreateEnum
-CREATE TYPE "PaymentStatus" AS ENUM ('trialing', 'active', 'canceled', 'incomplete', 'incomplete_expired', 'past_due', 'unpaid', 'paused');
+CREATE TYPE "PaymentStatus" AS ENUM ('trialing', 'active', 'canceled', 'incomplete', 'incomplete_expired', 'past_due', 'unpaid', 'paused', 'paid', 'no_payment_required');
+
+-- CreateEnum
+CREATE TYPE "OneTimeStatus" AS ENUM ('complete', 'expired', 'open');
 
 -- CreateTable
 CREATE TABLE "User" (
@@ -59,6 +62,8 @@ CREATE TABLE "Resume" (
     "userId" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
+    "downloads" INTEGER DEFAULT 0,
+    "views" INTEGER DEFAULT 0,
 
     CONSTRAINT "Resume_pkey" PRIMARY KEY ("id")
 );
@@ -119,6 +124,22 @@ CREATE TABLE "Subscription" (
     "trialEnd" TIMESTAMP(3),
 
     CONSTRAINT "Subscription_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Payment" (
+    "id" TEXT NOT NULL,
+    "userId" TEXT NOT NULL,
+    "status" "OneTimeStatus" NOT NULL,
+    "paymentStatus" "PaymentStatus" NOT NULL,
+    "metadata" JSONB DEFAULT '{}',
+    "priceId" TEXT NOT NULL,
+    "quantity" INTEGER NOT NULL,
+    "paymentIntent" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "expiresAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "Payment_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -183,6 +204,9 @@ CREATE UNIQUE INDEX "Customer_id_stripeCustomerId_key" ON "Customer"("id", "stri
 CREATE INDEX "Subscription_userId_idx" ON "Subscription"("userId");
 
 -- CreateIndex
+CREATE INDEX "Payment_userId_idx" ON "Payment"("userId");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "JobTitle_title_key" ON "JobTitle"("title");
 
 -- CreateIndex
@@ -210,10 +234,16 @@ ALTER TABLE "Customer" ADD CONSTRAINT "Customer_id_fkey" FOREIGN KEY ("id") REFE
 ALTER TABLE "Price" ADD CONSTRAINT "Price_productId_fkey" FOREIGN KEY ("productId") REFERENCES "Product"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
+ALTER TABLE "Subscription" ADD CONSTRAINT "Subscription_priceId_fkey" FOREIGN KEY ("priceId") REFERENCES "Price"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE "Subscription" ADD CONSTRAINT "Subscription_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Subscription" ADD CONSTRAINT "Subscription_priceId_fkey" FOREIGN KEY ("priceId") REFERENCES "Price"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "Payment" ADD CONSTRAINT "Payment_priceId_fkey" FOREIGN KEY ("priceId") REFERENCES "Price"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Payment" ADD CONSTRAINT "Payment_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "JobTitle" ADD CONSTRAINT "JobTitle_categoryId_fkey" FOREIGN KEY ("categoryId") REFERENCES "JobTitleCategory"("id") ON DELETE CASCADE ON UPDATE CASCADE;

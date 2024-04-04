@@ -23,6 +23,8 @@ import { User } from "@/server/user/decorators/user.decorator";
 
 import { OptionalGuard } from "../auth/guards/optional.guard";
 import { TwoFactorGuard } from "../auth/guards/two-factor.guard";
+import { Features } from "../stripe/decorators/payment.decorator";
+import { PaymentGuard } from "../stripe/guards/payment.guard";
 import { UtilsService } from "../utils/utils.service";
 import { Resume } from "./decorators/resume.decorator";
 import { ResumeGuard } from "./guards/resume.guard";
@@ -45,8 +47,15 @@ export class ResumeController {
     );
   }
 
+  /**
+   * Create New Resume
+   * @param user Login User
+   * @param createResumeDto Create Resume DTO
+   * @returns Resume
+   */
   @Post()
-  @UseGuards(TwoFactorGuard)
+  @Features(["resume"])
+  @UseGuards(TwoFactorGuard, PaymentGuard)
   async create(@User() user: UserEntity, @Body() createResumeDto: CreateResumeDto) {
     try {
       return await this.resumeService.create(user.id, createResumeDto);
@@ -61,7 +70,8 @@ export class ResumeController {
   }
 
   @Post("import")
-  @UseGuards(TwoFactorGuard)
+  @Features(["resume"])
+  @UseGuards(TwoFactorGuard, PaymentGuard)
   async import(@User() user: UserEntity, @Body() importResumeDto: ImportResumeDto) {
     try {
       return await this.resumeService.import(user.id, importResumeDto);
@@ -126,7 +136,8 @@ export class ResumeController {
   }
 
   @Get("/print/:id")
-  @UseGuards(OptionalGuard, ResumeGuard)
+  @Features(["recommendations"])
+  @UseGuards(OptionalGuard, ResumeGuard, PaymentGuard)
   async printResume(@User("id") userId: string | undefined, @Resume() resume: ResumeDto) {
     try {
       const url = await this.resumeService.printResume(resume, userId);

@@ -24,6 +24,8 @@
     "format": "pnpm exec prettier -w .",
     "crowdin:sync": "crowdin push && crowdin pull",
     "prisma:generate": "pnpm exec prisma generate",
+    "prisma:studio": "pnpm exec prisma studio",
+    "prisma:db": "pnpm exec prisma db",
     "prisma:format": "pnpm exec prisma format",
     "prisma:validate": "pnpm exec prisma validate",
     "prisma:migrate": "pnpm exec prisma migrate deploy",

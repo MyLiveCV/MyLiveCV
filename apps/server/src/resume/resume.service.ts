@@ -105,6 +105,12 @@ export class ResumeService {
     });
   }
 
+  findResumeCount(userId: string) {
+    return this.prisma.resume.count({
+      where: { userId },
+    });
+  }
+
   findOne(id: string, userId?: string) {
     if (userId) {
       return this.prisma.resume.findUniqueOrThrow({ where: { userId_id: { userId, id } } });

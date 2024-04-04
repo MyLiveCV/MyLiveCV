@@ -7,6 +7,166 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id               String         @id @default(cuid())
+  name             String
+  picture          String?
+  username         String         @unique
+  email            String         @unique
+  locale           String         @default("en-US")
+  emailVerified    Boolean        @default(false)
+  twoFactorEnabled Boolean        @default(false)
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  billingAddress   Json?          @default("{}")
+  paymentMethod    Json?          @default("{}")
+  provider         Provider
+  customer         Customer?
+  payment          Payment[]
+  resumes          Resume[]
+  secrets          Secrets?
+  subscription     Subscription[]
+}
+
+model Secrets {
+  id                   String    @id @default(cuid())
+  password             String?
+  lastSignedIn         DateTime?
+  verificationToken    String?
+  twoFactorSecret      String?
+  twoFactorBackupCodes String[]  @default([])
+  refreshToken         String?
+  resetToken           String?   @unique
+  userId               String    @unique
+  user                 User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Resume {
+  id         String     @id @default(cuid())
+  title      String
+  slug       String
+  jobTitle   String?
+  data       Json       @default("{}")
+  visibility Visibility @default(private)
+  locked     Boolean    @default(false)
+  userId     String
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+  downloads  Int?       @default(0)
+  views      Int?       @default(0)
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, id])
+  @@unique([userId, slug])
+  @@index([userId])
+}
+
+model Customer {
+  id               String @id
+  stripeCustomerId String
+  user             User   @relation(fields: [id], references: [id], onDelete: Cascade)
+
+  @@unique([id, stripeCustomerId])
+  @@index([stripeCustomerId])
+}
+
+model Product {
+  id          String  @id @default(cuid())
+  active      Boolean @default(false)
+  name        String
+  description String?
+  image       String?
+  metadata    Json?   @default("{}")
+  prices      Price[]
+}
+
+model Price {
+  id              String         @id @default(cuid())
+  productId       String
+  active          Boolean        @default(false)
+  description     String?
+  unitAmount      Int?
+  currency        String         @default("INR") @db.VarChar(3)
+  pricingType     PricingType
+  interval        Interval?
+  intervalCount   Int?           @default(0)
+  trialPeriodDays Int?           @default(0)
+  metadata        Json?          @default("{}")
+  payment         Payment[]
+  product         Product        @relation(fields: [productId], references: [id], onDelete: Cascade)
+  subscription    Subscription[]
+}
+
+model Subscription {
+  id                 String        @id
+  userId             String
+  status             PaymentStatus
+  metadata           Json?         @default("{}")
+  priceId            String
+  quantity           Int
+  cancelAtPeriodEnd  Boolean
+  createdAt          DateTime      @default(now())
+  currentPeriodStart DateTime
+  currentPeriodEnd   DateTime
+  endedAt            DateTime?
+  cancelAt           DateTime?
+  canceledAt         DateTime?
+  trialStart         DateTime?
+  trialEnd           DateTime?
+  price              Price         @relation(fields: [priceId], references: [id], onDelete: Cascade)
+  user               User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Payment {
+  id            String        @id
+  userId        String
+  status        OneTimeStatus
+  paymentStatus PaymentStatus
+  metadata      Json?         @default("{}")
+  priceId       String
+  quantity      Int
+  paymentIntent String
+  createdAt     DateTime      @default(now())
+  expiresAt     DateTime
+  price         Price         @relation(fields: [priceId], references: [id], onDelete: Cascade)
+  user          User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model JobTitle {
+  id               String                  @id @default(cuid())
+  title            String                  @unique
+  relatedJobTitles Json?                   @default("{}")
+  categoryId       String?
+  category         JobTitleCategory?       @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  recommendations  RecommendationSnippet[]
+
+  @@index([title])
+}
+
+model JobTitleCategory {
+  id        String     @id @default(cuid())
+  title     String     @unique
+  jobTitles JobTitle[]
+}
+
+model RecommendationSnippet {
+  id         String   @id @default(cuid())
+  type       String
+  phrase     String
+  highlight  String?
+  locale     String   @default("en-US")
+  usageCount Int      @default(0)
+  jobTitleId String
+  jobTitle   JobTitle @relation(fields: [jobTitleId], references: [id], onDelete: Cascade)
+
+  @@unique([jobTitleId, phrase, type])
+  @@index([jobTitleId, phrase])
+}
+
 enum Provider {
   email
   github
@@ -48,197 +208,4 @@ enum OneTimeStatus {
   complete
   expired
   open
-}
-
-model User {
-  id               String         @id @default(cuid())
-  name             String
-  picture          String?
-  username         String         @unique
-  email            String         @unique
-  locale           String         @default("en-US")
-  emailVerified    Boolean        @default(false)
-  twoFactorEnabled Boolean        @default(false)
-  createdAt        DateTime       @default(now())
-  updatedAt        DateTime       @updatedAt
-  billingAddress   Json?          @default("{}")
-  paymentMethod    Json?          @default("{}")
-  provider         Provider
-  secrets          Secrets?
-  resumes          Resume[]
-  customer         Customer?
-  subscription     Subscription[]
-  payment          Payment[]
-  // wallet           Wallet[]
-}
-
-model Secrets {
-  id                   String    @id @default(cuid())
-  password             String?
-  lastSignedIn         DateTime?
-  verificationToken    String?
-  twoFactorSecret      String?
-  twoFactorBackupCodes String[]  @default([])
-  refreshToken         String?
-  resetToken           String?   @unique
-  userId               String    @unique
-  user                 User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-}
-
-model Resume {
-  id       String  @id @default(cuid())
-  title    String
-  slug     String
-  jobTitle String?
-  data     Json    @default("{}")
-
-  visibility Visibility @default(private)
-  locked     Boolean    @default(false)
-
-  userId String
-  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  views     Int? @default(0)
-  downloads Int? @default(0)
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@unique([userId, id])
-  @@unique([userId, slug])
-  @@index(fields: [userId])
-}
-
-model Customer {
-  id               String @id
-  stripeCustomerId String
-  user             User   @relation(fields: [id], references: [id], onDelete: Cascade)
-
-  @@unique([id, stripeCustomerId])
-  @@index(fields: [stripeCustomerId])
-}
-
-model Product {
-  id          String  @id @default(cuid())
-  active      Boolean @default(false)
-  name        String
-  description String?
-  image       String?
-  metadata    Json?   @default("{}")
-
-  prices Price[]
-}
-
-model Price {
-  id        String  @id @default(cuid())
-  productId String
-  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
-
-  active      Boolean @default(false)
-  description String?
-  unitAmount  Int?
-  currency    String  @default("INR") @db.VarChar(3)
-
-  pricingType     PricingType
-  interval        Interval?
-  intervalCount   Int?        @default(0)
-  trialPeriodDays Int?        @default(0)
-  metadata        Json?       @default("{}")
-
-  subscription Subscription[]
-  payment      Payment[]
-}
-
-model Subscription {
-  id       String        @id
-  userId   String
-  user     User          @relation(fields: [userId], references: [id], onDelete: Cascade)
-  status   PaymentStatus
-  metadata Json?         @default("{}")
-  priceId  String
-  price    Price         @relation(fields: [priceId], references: [id], onDelete: Cascade)
-
-  quantity           Int
-  cancelAtPeriodEnd  Boolean
-  createdAt          DateTime  @default(now())
-  currentPeriodStart DateTime
-  currentPeriodEnd   DateTime
-  endedAt            DateTime?
-  cancelAt           DateTime?
-  canceledAt         DateTime?
-  trialStart         DateTime?
-  trialEnd           DateTime?
-
-  @@index(fields: [userId])
-}
-
-model Payment {
-  id            String        @id
-  userId        String
-  user          User          @relation(fields: [userId], references: [id], onDelete: Cascade)
-  status        OneTimeStatus
-  paymentStatus PaymentStatus
-  metadata      Json?         @default("{}")
-  priceId       String
-  price         Price         @relation(fields: [priceId], references: [id], onDelete: Cascade)
-
-  quantity      Int
-  paymentIntent String
-  createdAt     DateTime @default(now())
-  expiresAt     DateTime
-
-  @@index(fields: [userId])
-}
-
-// model Wallet {
-//   id            String               @id
-//   userId        String
-//   user          User                 @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-//   unlimitedResume Boolean @default(false)
-//   resumeAllowed Int?        @default(0)
-//   resumePosted  Int?        @default(0)
-
-//   active      Boolean @default(false)
-
-//   createdAt     DateTime @default(now())
-//   expiresAt     DateTime
-
-//   @@index(fields: [userId])
-// }
-
-model JobTitle {
-  id    String @id @default(cuid())
-  title String @unique
-
-  relatedJobTitles Json? @default("{}")
-
-  categoryId String?
-  category   JobTitleCategory? @relation(fields: [categoryId], references: [id], onDelete: Cascade)
-
-  recommendations RecommendationSnippet[]
-
-  @@index(fields: [title])
-}
-
-model JobTitleCategory {
-  id    String @id @default(cuid())
-  title String @unique
-
-  jobTitles JobTitle[]
-}
-
-model RecommendationSnippet {
-  id         String  @id @default(cuid())
-  type       String
-  phrase     String
-  highlight  String?
-  locale     String  @default("en-US")
-  usageCount Int     @default(0)
-
-  jobTitleId String
-  jobTitle   JobTitle @relation(fields: [jobTitleId], references: [id], onDelete: Cascade)
-
-  @@unique([jobTitleId, phrase, type])
-  @@index(fields: [jobTitleId, phrase])
 }

@@ -10,5 +10,6 @@ import { StripeService } from "./stripe.service";
   imports: [AuthModule, HttpModule, StorageModule],
   controllers: [StripeController],
   providers: [StripeService],
+  exports: [StripeService],
 })
 export class StripeModule {}
