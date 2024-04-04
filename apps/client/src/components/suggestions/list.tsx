@@ -7,7 +7,7 @@ import { ListItem } from "./list-item";
 
 export const List = ({
   isLoading,
-  suggestions,
+  suggestions = [],
   handleSuggestionClick,
 }: {
   isLoading: boolean;
@@ -15,7 +15,7 @@ export const List = ({
   handleSuggestionClick: (suggestion: string) => void;
 }) => {
   const suggestionsList = useMemo(() => {
-    return suggestions?.length === 0 ? (
+    return suggestions.length === 0 ? (
       <motion.div
         viewport={{ once: true }}
         initial={{ opacity: 0, x: -50 }}
@@ -24,7 +24,7 @@ export const List = ({
         {t`No suggestions found; try exploring alternative job titles in your search`}
       </motion.div>
     ) : (
-      suggestions?.map((suggestion, index) => (
+      suggestions.map((suggestion, index) => (
         <ListItem
           handleSuggestionClick={handleSuggestionClick}
           suggestion={suggestion}
