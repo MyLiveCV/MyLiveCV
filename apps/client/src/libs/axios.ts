@@ -1,8 +1,8 @@
 import { t } from "@lingui/macro";
 import { deepSearchAndParseDates, ErrorMessage } from "@reactive-resume/utils";
-import _axios from "axios";
+import _axios, { HttpStatusCode } from "axios";
 import createAuthRefreshInterceptor from "axios-auth-refresh";
-import { redirect } from "react-router-dom";
+import { NavigateFunction, redirect } from "react-router-dom";
 
 import { USER_KEY } from "../constants/query-keys";
 import { toast } from "../hooks/use-toast";
@@ -18,27 +18,46 @@ export type ServerError = {
 
 export const axios = _axios.create({ baseURL: "/api", withCredentials: true });
 
-// Intercept responses to transform ISO dates to JS date objects
-axios.interceptors.response.use(
-  (response) => {
-    const transformedResponse = deepSearchAndParseDates(response.data, ["createdAt", "updatedAt"]);
-    return { ...response, data: transformedResponse };
-  },
-  (error) => {
-    const message = error.response?.data.message as ErrorMessage;
-    const description = translateError(message);
+export const setupInterceptors = (_navigate: NavigateFunction) => {
+  // Intercept responses to transform ISO dates to JS date objects
+  axios.interceptors.response.use(
+    (response) => {
+      const transformedResponse = deepSearchAndParseDates(response.data, [
+        "createdAt",
+        "updatedAt",
+      ]);
+      return { ...response, data: transformedResponse };
+    },
+    (error) => {
+      const statusCode = error.response?.status;
+      const message = error.response?.data.message as ErrorMessage;
+      const description = translateError(message);
 
-    if (description) {
-      toast({
-        variant: "error",
-        title: t`Oops, the server returned an error.`,
-        description,
-      });
-    }
+      switch (statusCode) {
+        case HttpStatusCode.PaymentRequired:
+          toast({
+            variant: "warning",
+            title: t`Payment is Required.`,
+            description,
+          });
+          // _navigate("/pricing");
+          break;
 
-    return Promise.reject(error);
-  },
-);
+        default:
+          if (description) {
+            toast({
+              variant: "error",
+              title: t`Oops, the server returned an error.`,
+              description,
+            });
+          }
+          break;
+      }
+
+      return Promise.reject(error);
+    },
+  );
+};
 
 // Create another instance to handle failed refresh tokens
 // Reference: https://github.com/Flyrell/axios-auth-refresh/issues/191
