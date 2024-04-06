@@ -92,13 +92,15 @@ export class ResumeService {
         title: true,
         slug: true,
         jobTitle: true,
-        data: true,
+        // data: true,
         visibility: true,
         locked: true,
         userId: true,
         createdAt: true,
         updatedAt: true,
         user: true,
+        downloads: true,
+        views: true,
       },
       where: { userId },
       orderBy: { updatedAt: "desc" },
@@ -120,14 +122,18 @@ export class ResumeService {
   }
 
   async findOneStatistics(userId: string, id: string) {
-    const result = await Promise.all([
-      this.redis.get(`user:${userId}:resume:${id}:views`),
-      this.redis.get(`user:${userId}:resume:${id}:downloads`),
-    ]);
+    // const result = await Promise.all([
+    //   this.redis.get(`user:${userId}:resume:${id}:views`),
+    //   this.redis.get(`user:${userId}:resume:${id}:downloads`),
+    // ]);
+    // const [views, downloads] = result.map((value) => Number(value) || 0);
+    // return { views, downloads };
 
-    const [views, downloads] = result.map((value) => Number(value) || 0);
+    const resume = await this.prisma.resume.findFirstOrThrow({
+      where: { userId: userId, id },
+    });
 
-    return { views, downloads };
+    return { views: resume.views, downloads: resume.downloads };
   }
 
   async findOneByUsernameSlug(username: string, slug: string, userId?: string) {
@@ -136,7 +142,12 @@ export class ResumeService {
     });
 
     // Update statistics: increment the number of views by 1
-    if (!userId) await this.redis.incr(`user:${resume.userId}:resume:${resume.id}:views`);
+    if (!userId)
+      await this.prisma.resume.update({
+        where: { id: resume.id },
+        data: { views: resume.views + 1 },
+      });
+    // if (!userId) await this.redis.incr(`user:${resume.userId}:resume:${resume.id}:views`);
 
     return resume;
   }
@@ -209,7 +220,12 @@ export class ResumeService {
     const url = await this.printerService.printResume(resume);
 
     // Update statistics: increment the number of downloads by 1
-    if (!userId) await this.redis.incr(`user:${resume.userId}:resume:${resume.id}:downloads`);
+    // if (!userId) await this.redis.incr(`user:${resume.userId}:resume:${resume.id}:downloads`);
+    if (!userId)
+      await this.prisma.resume.update({
+        where: { id: resume.id },
+        data: { downloads: resume.downloads + 1 },
+      });
 
     return url;
   }

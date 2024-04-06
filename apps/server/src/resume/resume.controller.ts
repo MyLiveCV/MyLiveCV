@@ -74,6 +74,14 @@ export class ResumeController {
   @UseGuards(TwoFactorGuard, PaymentGuard)
   async import(@User() user: UserEntity, @Body() importResumeDto: ImportResumeDto) {
     try {
+      // If Data is Resume Id Replace it with
+      if (typeof importResumeDto.data === "string") {
+        const resume = (await this.resumeService.findOne(
+          importResumeDto.data,
+          user.id,
+        )) as ResumeDto;
+        importResumeDto.data = resume.data;
+      }
       return await this.resumeService.import(user.id, importResumeDto);
     } catch (error) {
       if (error instanceof PrismaClientKnownRequestError && error.code === "P2002") {
@@ -137,7 +145,7 @@ export class ResumeController {
 
   @Get("/print/:id")
   @Features(["recommendations"])
-  @UseGuards(OptionalGuard, ResumeGuard, PaymentGuard)
+  @UseGuards(OptionalGuard, ResumeGuard)
   async printResume(@User("id") userId: string | undefined, @Resume() resume: ResumeDto) {
     try {
       const url = await this.resumeService.printResume(resume, userId);

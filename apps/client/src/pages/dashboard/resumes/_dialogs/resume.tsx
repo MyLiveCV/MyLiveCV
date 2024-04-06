@@ -89,7 +89,7 @@ export const ResumeDialog = () => {
       if (!payload.item?.id) return;
 
       await updateResume({
-        ...payload.item,
+        id: payload.item.id,
         title: values.title,
         slug: values.slug,
         jobTitle: values.jobTitle,
@@ -102,7 +102,7 @@ export const ResumeDialog = () => {
       await duplicateResume({
         title: values.title,
         slug: values.slug,
-        data: payload.item.data,
+        data: payload.item.id,
         jobTitle: values.jobTitle,
       });
     }

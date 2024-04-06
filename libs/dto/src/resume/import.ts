@@ -8,7 +8,8 @@ export const importResumeSchema = z.object({
   jobTitle: z.string().optional(),
   slug: z.string().min(1).transform(kebabCase).optional(),
   visibility: z.enum(["public", "private"]).default("private").optional(),
-  data: resumeDataSchema,
+  // Can be Data Object or Resume Id
+  data: resumeDataSchema.or(z.string()),
 });
 
 export class ImportResumeDto extends createZodDto(importResumeSchema) {}

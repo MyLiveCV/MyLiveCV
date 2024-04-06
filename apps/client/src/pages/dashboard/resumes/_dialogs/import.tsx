@@ -87,7 +87,7 @@ export const ImportDialog = () => {
   }, [isOpen]);
 
   useEffect(() => {
-    form.reset();
+    form.reset({ file: undefined, type: filetype });
     setValidationResult(null);
   }, [filetype]);
 
@@ -194,7 +194,7 @@ export const ImportDialog = () => {
 
   const onReset = () => {
     form.getValues();
-    form.reset({ file: null }, { keepDirtyValues: true });
+    form.reset({ file: undefined }, { keepDirtyValues: true });
     setValidationResult(null);
   };
 

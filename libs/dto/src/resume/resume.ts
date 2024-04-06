@@ -14,6 +14,8 @@ export const resumeSchema = z.object({
   locked: z.boolean().default(false),
   userId: idSchema,
   user: userSchema.optional(),
+  views: z.number().default(0),
+  downloads: z.number().default(0),
   createdAt: z.date().or(z.dateString()),
   updatedAt: z.date().or(z.dateString()),
 });
