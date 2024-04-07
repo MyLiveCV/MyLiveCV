@@ -81,13 +81,14 @@ export const ImportDialog = () => {
     resolver: zodResolver(formSchema),
   });
   const filetype = form.watch("type");
+  const jobTitle = form.watch("jobTitle");
 
   useEffect(() => {
     if (isOpen) onReset();
   }, [isOpen]);
 
   useEffect(() => {
-    form.reset({ file: undefined, type: filetype });
+    form.reset({ file: undefined, type: filetype, jobTitle });
     setValidationResult(null);
   }, [filetype]);
 
@@ -184,17 +185,12 @@ export const ImportDialog = () => {
 
       close();
     } catch (error: unknown) {
-      toast({
-        variant: "error",
-        title: t`Oops, the server returned an error.`,
-        description: error instanceof Error ? error.message : undefined,
-      });
+      // Error handled in axios interceptor
     }
   };
 
   const onReset = () => {
-    form.getValues();
-    form.reset({ file: undefined }, { keepDirtyValues: true });
+    form.reset({ file: undefined, type: filetype, jobTitle });
     setValidationResult(null);
   };
 

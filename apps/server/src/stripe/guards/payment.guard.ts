@@ -26,8 +26,6 @@ export class PaymentGuard implements CanActivate {
   async canActivate(context: ExecutionContext): Promise<boolean> {
     // For which feature check the Guard
     const features = this.reflector.get(Features, context.getHandler());
-    console.log(features);
-    console.log(typeof features);
     const request = context.switchToHttp().getRequest<Request>();
     const user = request.user as UserWithSecrets | false;
 
