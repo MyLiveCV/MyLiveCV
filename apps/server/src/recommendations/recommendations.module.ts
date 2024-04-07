@@ -5,7 +5,7 @@ import { ConfigService } from "@nestjs/config";
 import { PrinterService } from "../printer/printer.service";
 import { ResumeService } from "../resume/resume.service";
 import { StorageModule } from "../storage/storage.module";
-import { StripeModule } from "../stripe/stripe.module";
+import { PaymentModule } from "../payment/payment.module";
 import { UserService } from "../user/user.service";
 import { UtilsService } from "../utils/utils.service";
 import { JobTitleService } from "./job-title/job-title.service";
@@ -14,7 +14,7 @@ import { RecommendationsController } from "./recommendations.controller";
 import { RecommendationsService } from "./recommendations.service";
 
 @Module({
-  imports: [HttpModule, StorageModule, StripeModule],
+  imports: [HttpModule, StorageModule, PaymentModule],
   providers: [
     RecommendationsService,
     PalmService,

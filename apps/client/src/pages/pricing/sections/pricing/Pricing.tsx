@@ -1,4 +1,4 @@
-import { useProducts } from "@/client/services/stripe/product";
+import { useProducts } from "@/client/services/payment/product";
 
 import { Product } from "../cards/Product";
 

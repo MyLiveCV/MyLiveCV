@@ -3,21 +3,21 @@ import { useQuery } from "@tanstack/react-query";
 
 import { axios } from "@/client/libs/axios";
 
-export const fetchSubscriptions = async () => {
-  const response = await axios.get<ProductDto[]>(`/stripe/products`);
+export const fetchProducts = async () => {
+  const response = await axios.get<ProductDto[]>(`/payment/products`);
 
   return response.data;
 };
 
-export const useSubscriptions = () => {
+export const useProducts = () => {
   const {
     error,
     isPending: loading,
-    data: subscriptions,
+    data: products,
   } = useQuery({
     queryKey: ["products"],
-    queryFn: fetchSubscriptions,
+    queryFn: fetchProducts,
   });
 
-  return { subscriptions, loading, error };
+  return { products, loading, error };
 };

@@ -4,8 +4,8 @@ import { Throttle } from "@nestjs/throttler";
 import { PalmGenerateTextRequest } from "@reactive-resume/schema";
 
 import { TwoFactorGuard } from "../auth/guards/two-factor.guard";
-import { Features } from "../stripe/decorators/payment.decorator";
-import { PaymentGuard } from "../stripe/guards/payment.guard";
+import { Features } from "../payment/decorators/payment.decorator";
+import { PaymentGuard } from "../payment/guards/payment.guard";
 import { PalmService } from "./palm/palm.service";
 import { RecommendationsService } from "./recommendations.service";
 

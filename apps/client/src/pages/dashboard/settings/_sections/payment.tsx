@@ -7,7 +7,7 @@ import {
   Button,
 } from "@reactive-resume/ui";
 
-import { createPaymentLink } from "@/client/services/stripe/stripe";
+import { createPaymentLink } from "@/client/services/payment/payment";
 import { useUser } from "@/client/services/user";
 
 export const PaymentSettings = () => {

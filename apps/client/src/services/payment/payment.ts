@@ -9,13 +9,13 @@ export const createCheckoutSession = async (checkoutRequest: StripeCheckoutReque
     StripeCheckoutResponse,
     AxiosResponse<StripeCheckoutResponse>,
     StripeCheckoutRequest
-  >(`/stripe/create-checkout-session`, checkoutRequest);
+  >(`/payment/create-checkout-session`, checkoutRequest);
 
   return response.data;
 };
 
 export const createPaymentLink = async () => {
-  const response = await axios.get<{ url: string }>(`/stripe/create-portal-link`);
+  const response = await axios.get<{ url: string }>(`/payment/create-portal-link`);
   return response.data;
 };
 

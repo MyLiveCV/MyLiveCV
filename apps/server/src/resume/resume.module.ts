@@ -4,12 +4,12 @@ import { AuthModule } from "@/server/auth/auth.module";
 import { PrinterModule } from "@/server/printer/printer.module";
 
 import { StorageModule } from "../storage/storage.module";
-import { StripeModule } from "../stripe/stripe.module";
+import { PaymentModule } from "../payment/payment.module";
 import { ResumeController } from "./resume.controller";
 import { ResumeService } from "./resume.service";
 
 @Module({
-  imports: [AuthModule, PrinterModule, StorageModule, StripeModule],
+  imports: [AuthModule, PrinterModule, StorageModule, PaymentModule],
   controllers: [ResumeController],
   providers: [ResumeService],
   exports: [ResumeService],

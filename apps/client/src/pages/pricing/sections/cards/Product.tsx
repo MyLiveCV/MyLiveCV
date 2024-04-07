@@ -5,7 +5,7 @@ import { Button } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { useState } from "react";
 
-import { createCheckoutSession } from "@/client/services/stripe/stripe";
+import { createCheckoutSession } from "@/client/services/payment/payment";
 
 import { getStripe } from "../../stripeClient";
 

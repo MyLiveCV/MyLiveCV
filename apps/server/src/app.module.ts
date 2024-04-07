@@ -17,7 +17,7 @@ import { PrinterModule } from "./printer/printer.module";
 import { RecommendationsModule } from "./recommendations/recommendations.module";
 import { ResumeModule } from "./resume/resume.module";
 import { StorageModule } from "./storage/storage.module";
-import { StripeModule } from "./stripe/stripe.module";
+import { PaymentModule } from "./payment/payment.module";
 import { TranslationModule } from "./translation/translation.module";
 import { UserModule } from "./user/user.module";
 import { UtilsModule } from "./utils/utils.module";
@@ -52,7 +52,7 @@ import { UtilsModule } from "./utils/utils.module";
       rootPath: join(__dirname, "..", "client"),
     }),
     RecommendationsModule,
-    StripeModule,
+    PaymentModule,
     ThrottlerModule.forRoot([
       {
         ttl: 1000,

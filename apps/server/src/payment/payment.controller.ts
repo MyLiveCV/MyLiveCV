@@ -23,8 +23,8 @@ import { UtilsService } from "../utils/utils.service";
 import { StripeService } from "./stripe.service";
 
 @ApiTags("Payment")
-@Controller("stripe")
-export class StripeController {
+@Controller("payment")
+export class PaymentController {
   constructor(
     private readonly stripeService: StripeService,
     private readonly utils: UtilsService,
