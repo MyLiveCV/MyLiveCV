@@ -8,7 +8,7 @@ msgstr ""
 "Language: pl\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-03-22 10:30\n"
+"PO-Revision-Date: 2024-04-17 00:08\n"
 "Last-Translator: \n"
 "Language-Team: Polish\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
@@ -28,7 +28,7 @@ msgstr "{templatesCount} szablonów dostępnych"
 
 #: apps/client/src/pages/builder/_components/sections/shared/section-options.tsx:115
 msgid "{value, plural, one {Column} other {Columns}}"
-msgstr ""
+msgstr "{value, plural, one {Kolumna} few {Kolumny} many {Kolumny} other {Kolumny}}"
 
 #: apps/client/src/pages/home/sections/faq/index.tsx:47
 msgid "<0><1>Stand out from the crowd: </1> Capture recruiter attention with a dynamic and interactive resume.</0><2><3>Increase interview rates: </3> Engage with recruiters and showcase your skills in a memorable way.</2><4><5>Get hired faster: </5> Optimize your resume for Applicant Tracking Systems (ATS) and land more interviews.</4><6><7>Build your brand: </7> Create a professional online presence that showcases your best assets.</6><8><9>Track your progress: </9> Gain valuable insights into your job search and make data-driven decisions.</8>"
@@ -210,7 +210,7 @@ msgstr "Na pewno?"
 #. For example, Computer Science or Business Administration
 #: apps/client/src/pages/builder/_components/dialogs/education.tsx:78
 msgid "Area of Study"
-msgstr ""
+msgstr "Kierunek studiów"
 
 #: apps/client/src/pages/builder/_components/sections/picture/options.tsx:86
 msgid "Aspect Ratio"
@@ -218,7 +218,7 @@ msgstr "Współczynnik proporcji"
 
 #: apps/client/src/pages/home/sections/keywords/index.tsx:43
 msgid "Available in {languagesCount} languages"
-msgstr ""
+msgstr "Dostępne w {languagesCount} językach"
 
 #: apps/client/src/pages/builder/_components/dialogs/awards.tsx:54
 msgid "Awarder"
@@ -246,11 +246,11 @@ msgstr "Kody Zapasowe mogą zawierać wyłącznie małe litery lub cyfry i musz�
 #: apps/client/src/pages/builder/_layout/simple/_components/left/section-bar.tsx:33
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
 msgid "Basics"
-msgstr ""
+msgstr "Podstawy"
 
 #: apps/client/src/pages/builder/_components/sections/basics.tsx:22
 msgid "Basics"
-msgstr ""
+msgstr "Podstawy"
 
 #: apps/client/src/pages/builder/_components/sections/picture/options.tsx:196
 msgid "Border"
@@ -653,7 +653,7 @@ msgstr "Nie pamiętasz hasła?"
 #: apps/client/src/pages/builder/_components/sections/page.tsx:32
 #: apps/client/src/pages/builder/_components/sections/page.tsx:40
 msgid "Format"
-msgstr ""
+msgstr "Format"
 
 #: apps/client/src/pages/builder/_components/sections/information.tsx:49
 msgid "Found a bug, or have an idea for a new feature?"
@@ -779,7 +779,7 @@ msgstr ""
 
 #: apps/client/src/pages/home/sections/testimonials/index.tsx:70
 msgid "I always love to hear from the users of Reactive Resume with feedback or support. Here are some of the messages I've received. If you have any feedback, feel free to drop me an email at <0>{email}</0>."
-msgstr ""
+msgstr "Uwielbiam otrzymywać opinie lub feedback od użytkowników Reactive Resume. Oto niektóre wiadomości, które otrzymałem. Jeśli masz jakieś uwagi, napisz do mnie e-mail na adres <0>{email}</0>."
 
 #: apps/client/src/pages/builder/_components/dialogs/profiles.tsx:87
 msgid "Icon"
@@ -827,7 +827,7 @@ msgstr ""
 #: apps/client/src/pages/builder/_layout/advance/_components/sidebars/right/index.tsx:107
 #: apps/client/src/pages/builder/_layout/simple/_components/left/options.tsx:77
 msgid "Information"
-msgstr ""
+msgstr "Informacje"
 
 #: apps/client/src/pages/builder/_components/dialogs/education.tsx:44
 msgid "Institution"
@@ -922,7 +922,7 @@ msgstr "Układ"
 
 #: apps/client/src/pages/builder/_components/sections/page.tsx:44
 msgid "Letter"
-msgstr ""
+msgstr "List"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:64
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:77
@@ -1091,7 +1091,7 @@ msgstr "Otwórz"
 #: apps/client/src/services/openai/fix-grammar.ts:28
 #: apps/client/src/services/openai/improve-writing.ts:28
 msgid "OpenAI did not return any choices for your text."
-msgstr ""
+msgstr "OpenAI nie zwróciło żadnych wyborów dla Twojego tekstu."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:52
 msgid "OpenAI Integration"
@@ -1183,16 +1183,16 @@ msgstr "Przechowuj kody zapasowe w bezpiecznym miejscu. Możesz użyć jednego z
 
 #: apps/client/src/pages/builder/_components/sections/picture/options.tsx:106
 msgid "Portrait"
-msgstr ""
+msgstr "Portret"
 
 #: apps/client/src/pages/builder/_components/dialogs/experience.tsx:59
 msgctxt "Position held at a company, for example, Software Engineer"
 msgid "Position"
-msgstr ""
+msgstr "Stanowisko"
 
 #: apps/client/src/pages/builder/_components/dialogs/volunteer.tsx:58
 msgid "Position"
-msgstr ""
+msgstr "Stanowisko"
 
 #: apps/client/src/pages/builder/_components/dialogs/profiles.tsx:103
 msgid "Powered by <0>Simple Icons</0>"
@@ -1212,7 +1212,7 @@ msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/theme.tsx:43
 msgid "Primary Color"
-msgstr ""
+msgstr "Główny kolor"
 
 #: apps/client/src/components/ai-actions.tsx:139
 #: apps/client/src/components/ai-actions.tsx:142
@@ -1362,7 +1362,7 @@ msgstr "Wyszukaj język"
 
 #: apps/client/src/pages/home/sections/keywords/index.tsx:48
 msgid "Secure with two-factor authentication"
-msgstr ""
+msgstr "Bezpieczeństwo dzięki uwierzytelnianiu dwuskładnikowemu"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:68
 msgid "Security"
@@ -1520,7 +1520,7 @@ msgstr "Przechowuj bezpiecznie swoje kody zapasowe"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
 msgid "Stored"
-msgstr ""
+msgstr "Przechowywane"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
@@ -1540,7 +1540,7 @@ msgstr "Wesprzyj aplikację, wpłacając dowolną kwotę!"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:9
 msgid "Supporting Reactive Resume"
-msgstr ""
+msgstr "Wspierający Reactive Resume"
 
 #: apps/client/src/pages/home/sections/keywords/index.tsx:57
 msgid "Supports A4/Letter page formats"
@@ -1645,7 +1645,7 @@ msgstr "Przełącz Numery Stron"
 
 #: apps/client/src/pages/home/sections/keywords/index.tsx:60
 msgid "Track views and downloads"
-msgstr ""
+msgstr "Śledź wyświetlenia i pobrania"
 
 #: apps/client/src/pages/home/sections/hero/index.tsx:39
 msgid "Transform Your Career Journey with Live Resumes and AI Brilliance"
@@ -1676,7 +1676,7 @@ msgstr "Wpisz <0>delete</0>, aby potwierdzić usunięcie konta."
 #. For example, Bachelor's Degree or Master's Degree
 #: apps/client/src/pages/builder/_components/dialogs/education.tsx:59
 msgid "Type of Study"
-msgstr ""
+msgstr "Uzyskane wykształcenie"
 
 #: apps/client/src/pages/builder/_components/sections/typography.tsx:66
 #: apps/client/src/pages/builder/_layout/advance/_components/sidebars/right/index.tsx:72
@@ -1779,7 +1779,7 @@ msgstr "Zweryfikuj adres e-mail"
 
 #: apps/client/src/pages/builder/_components/sections/statistics.tsx:51
 msgid "Views"
-msgstr ""
+msgstr "Wyświetlenia"
 
 #: apps/client/src/pages/builder/_components/sections/shared/section-list-item.tsx:98
 #: apps/client/src/pages/builder/_components/sections/shared/section-list-item.tsx:125
@@ -1795,7 +1795,7 @@ msgstr "Weryfikujemy Twój adres e-mail tylko po to, aby mieć pewność, że b�
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:113
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:124
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:100
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:82
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:80
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:94
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:67
