@@ -202,6 +202,15 @@ export class ResumeService {
     return resume;
   }
 
+  async visible(userId: string, id: string, visible: boolean) {
+    const resume = await this.prisma.resume.update({
+      data: { visibility: visible ? "public" : "private" },
+      where: { userId_id: { userId, id } },
+    });
+
+    return resume;
+  }
+
   async remove(userId: string, id: string) {
     await Promise.all([
       // Remove cached keys

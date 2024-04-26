@@ -14,6 +14,7 @@ import { VolunteerDialog } from "../pages/builder/_components/dialogs/volunteer"
 import { ImportDialog } from "../pages/dashboard/resumes/_dialogs/import";
 import { LockDialog } from "../pages/dashboard/resumes/_dialogs/lock";
 import { ResumeDialog } from "../pages/dashboard/resumes/_dialogs/resume";
+import { ShareDialog } from "../pages/dashboard/resumes/_dialogs/share";
 import { TwoFactorDialog } from "../pages/dashboard/settings/_dialogs/two-factor";
 import { useResumeStore } from "../stores/resume";
 
@@ -31,6 +32,7 @@ export const DialogProvider = ({ children }: Props) => {
       <div id="dialog-root">
         <ResumeDialog />
         <LockDialog />
+        <ShareDialog />
         <ImportDialog />
         <TwoFactorDialog />
 

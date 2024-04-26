@@ -137,6 +137,12 @@ export class ResumeController {
     return this.resumeService.lock(user.id, id, set);
   }
 
+  @Patch(":id/visible")
+  @UseGuards(TwoFactorGuard)
+  visible(@User() user: UserEntity, @Param("id") id: string, @Body("set") set = true) {
+    return this.resumeService.visible(user.id, id, set);
+  }
+
   @Delete(":id")
   @UseGuards(TwoFactorGuard)
   remove(@User() user: UserEntity, @Param("id") id: string) {
