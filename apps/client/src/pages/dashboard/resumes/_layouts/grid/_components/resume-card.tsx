@@ -3,6 +3,8 @@ import {
   CircleNotch,
   CopySimple,
   DotsThreeVertical,
+  Download,
+  Eye,
   FolderOpen,
   Lock,
   LockOpen,
@@ -21,6 +23,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  Tooltip,
 } from "@reactive-resume/ui";
 import { cn, ResumeSections } from "@reactive-resume/utils";
 import dayjs from "dayjs";
@@ -192,8 +195,39 @@ export const ResumeCard = ({ resume }: Props) => {
             <div>
               <h4 className="line-clamp-2 font-medium">{resume.title}</h4>
               <p className="line-clamp-1 justify-end text-xs opacity-75">{t`Last updated ${lastUpdated}`}</p>
+
+              <p
+                className={cn(
+                  "line-clamp-1 justify-end pt-2 opacity-80",
+                  resume.visibility !== "public" && "blur-sm",
+                )}
+              >
+                <Tooltip
+                  side="top"
+                  content={
+                    resume.visibility !== "public"
+                      ? t`Statistics are available only for public resumes.`
+                      : t`You can track the number of views  and downloads your resume has received.`
+                  }
+                >
+                  {resume.views?.toString() && resume.downloads?.toString() && (
+                    <p className="flex w-[80px] font-medium">
+                      <p className="flex">
+                        {resume.views}
+                        <Eye size={18} className="ml-1" />
+                      </p>
+                      <p className="ml-3 flex">
+                        {resume.downloads}
+                        <Download size={18} className="ml-1" />
+                      </p>
+                    </p>
+                  )}
+                </Tooltip>
+              </p>
             </div>
-            <div>{dropdownMenu}</div>
+            <div className="flex">
+              <div className="content-center">{dropdownMenu}</div>
+            </div>
           </div>
         </BaseCard>
       </ContextMenuTrigger>

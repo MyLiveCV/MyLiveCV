@@ -148,6 +148,8 @@ export const ResumeListItem = ({ resume }: Props) => {
               title={resume.title}
               description={t`Last updated ${lastUpdated}`}
               start={dropdownMenu}
+              downloads={resume.downloads}
+              views={resume.views}
             />
           </HoverCardTrigger>
           <HoverCardContent align="end" className="p-0" sideOffset={-100} alignOffset={100}>
