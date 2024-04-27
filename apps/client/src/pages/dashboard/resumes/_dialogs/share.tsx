@@ -101,7 +101,7 @@ export const ShareDialog = () => {
         <AlertDialogFooter>
           <AlertDialogCancel>{t`Cancel`}</AlertDialogCancel>
           <AlertDialogAction variant="info" disabled={loading} onClick={onSubmit}>
-            {isPrivate ? t`Public` : t`Private`}
+            {isPrivate ? t`Enable Public Sharing` : t`Enable Private Sharing`}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

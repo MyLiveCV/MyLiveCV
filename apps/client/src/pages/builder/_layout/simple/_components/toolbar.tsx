@@ -18,6 +18,7 @@ import { motion } from "framer-motion";
 
 import { useToast } from "@/client/hooks/use-toast";
 import { usePrintResume } from "@/client/services/resume";
+import { useUser } from "@/client/services/user";
 import { useBuilderStore } from "@/client/stores/builder";
 import { useResumeStore, useTemporalResumeStore } from "@/client/stores/resume";
 
@@ -29,10 +30,12 @@ export const BuilderToolbar = () => {
   const redo = useTemporalResumeStore((state) => state.redo);
   const isRedo = useTemporalResumeStore((state) => state.futureStates.length > 0);
   const frameRef = useBuilderStore((state) => state.frame.ref);
+  const { user } = useUser();
 
   const id = useResumeStore((state) => state.resume.id);
   const isPublic = useResumeStore((state) => state.resume.visibility === "public");
   const pageOptions = useResumeStore((state) => state.resume.data.metadata.page.options);
+  const slug = useResumeStore((state) => state.resume.slug);
 
   const { printResume, loading } = usePrintResume();
 
@@ -48,7 +51,7 @@ export const BuilderToolbar = () => {
   };
 
   const onCopy = async () => {
-    const { url } = await printResume({ id });
+    const url = `${window.location.origin}/${user?.username}/${slug}`;
     await navigator.clipboard.writeText(url);
 
     toast({
