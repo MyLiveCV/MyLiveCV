@@ -3,7 +3,7 @@ import { RichInput } from "@reactive-resume/ui";
 
 import { useResumeStore } from "@/client/stores/resume";
 
-import { getSectionIcon } from "../shared/section-icon";
+import { getMetaDataSectionIcon } from "../shared/metadata-section-icon";
 
 export const NotesSection = () => {
   const setValue = useResumeStore((state) => state.setValue);
@@ -13,7 +13,7 @@ export const NotesSection = () => {
     <section id="notes" className="grid gap-y-6">
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
-          {getSectionIcon("notes")}
+          {getMetaDataSectionIcon("notes")}
           <h2 className="line-clamp-1 text-3xl font-bold">{t`Notes`}</h2>
         </div>
       </header>

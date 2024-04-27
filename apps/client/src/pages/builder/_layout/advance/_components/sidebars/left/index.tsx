@@ -1,26 +1,56 @@
-import { t } from "@lingui/macro";
-import { Plus } from "@phosphor-icons/react";
 import { Button, ScrollArea, Separator } from "@reactive-resume/ui";
-import { ResumeSections } from "@reactive-resume/utils";
-import { useRef } from "react";
+import { Fragment, useMemo, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import { Icon } from "@/client/components/icon";
 import { UserAvatar } from "@/client/components/user-avatar";
 import { UserOptions } from "@/client/components/user-options";
-import { SectionIcon } from "@/client/pages/builder/_components/sections/shared/section-icon";
-import { SectionMapping } from "@/client/pages/builder/_helper/section";
-import { useResumeStore } from "@/client/stores/resume";
+import {
+  ResumeOptionsSteps,
+  SectionIconsMapping,
+  SectionIconsMappingProps,
+  SectionMapping,
+  SectionSteps,
+} from "@/client/pages/builder/_helper/section";
+// import { useResumeStore } from "@/client/stores/resume";
 
 export const LeftSidebar = () => {
   const containterRef = useRef<HTMLDivElement | null>(null);
 
-  const addSection = useResumeStore((state) => state.addSection);
+  // const addSection = useResumeStore((state) => state.addSection);
 
   const scrollIntoView = (selector: string) => {
     const section = containterRef.current?.querySelector(selector);
     section?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const sections = useMemo(
+    () =>
+      SectionSteps.map((step) => {
+        const Section = SectionMapping[step] as React.FC;
+        return (
+          <div key={step}>
+            <Section />
+
+            <Separator className="mt-4" />
+          </div>
+        );
+      }),
+    [SectionSteps, SectionMapping],
+  );
+
+  const resumeSectionIcons = useMemo(
+    () =>
+      SectionSteps.map((step) => {
+        const Section = SectionIconsMapping[step] as React.FC<SectionIconsMappingProps>;
+        return (
+          <Fragment key={step}>
+            <Section onClick={() => scrollIntoView(`#${step}`)} />
+          </Fragment>
+        );
+      }),
+    [ResumeOptionsSteps, SectionIconsMapping],
+  );
 
   return (
     <div className="flex bg-secondary-accent/30">
@@ -32,7 +62,8 @@ export const LeftSidebar = () => {
         </Button>
 
         <div className="flex flex-col items-center justify-center gap-y-2">
-          <SectionIcon
+          {resumeSectionIcons}
+          {/* <SectionIcon
             id={ResumeSections.BASICS}
             onClick={() => scrollIntoView(`#${ResumeSections.BASICS}`)}
             name={t({
@@ -78,7 +109,7 @@ export const LeftSidebar = () => {
             onClick={() => scrollIntoView(`#${ResumeSections.INTERESTS}`)}
           />
           <SectionIcon
-            id={ResumeSections.PROFILES}
+            id={ResumeSections.PROJECTS}
             onClick={() => scrollIntoView(`#${ResumeSections.PROJECTS}`)}
           />
           <SectionIcon
@@ -100,11 +131,12 @@ export const LeftSidebar = () => {
             name={t`Add a new section`}
             icon={<Plus size={14} />}
             onClick={() => {
-              addSection();
+              // addSection();
               // eslint-disable-next-line lingui/no-unlocalized-strings
-              scrollIntoView("& > section:last-of-type");
+              scrollIntoView(`#${ResumeSections.REFERENCES}`);
+              // scrollIntoView("& > section:last-of-type");
             }}
-          />
+          /> */}
         </div>
 
         <UserOptions>
@@ -116,36 +148,7 @@ export const LeftSidebar = () => {
 
       <ScrollArea orientation="vertical" className="h-screen flex-1 pb-16 lg:pb-0">
         <div ref={containterRef} className="grid gap-y-6 p-6 @container/left">
-          {SectionMapping[ResumeSections.BASICS]}
-          <Separator />
-          {SectionMapping[ResumeSections.SUMMARY]}
-          <Separator />
-          {SectionMapping[ResumeSections.PROFILES]}
-          <Separator />
-          {SectionMapping[ResumeSections.EXPERIENCE]}
-          <Separator />
-          {SectionMapping[ResumeSections.EDUCATION]}
-          <Separator />
-          {SectionMapping[ResumeSections.SKILLS]}
-          <Separator />
-          {SectionMapping[ResumeSections.LANGUAGES]}
-          <Separator />
-          {SectionMapping[ResumeSections.AWARDS]}
-          <Separator />
-          {SectionMapping[ResumeSections.CERTIFICATIONS]}
-          <Separator />
-          {SectionMapping[ResumeSections.INTERESTS]}
-          <Separator />
-          {SectionMapping[ResumeSections.PROJECTS]}
-          <Separator />
-          {SectionMapping[ResumeSections.PUBLICATIONS]}
-          <Separator />
-          {SectionMapping[ResumeSections.VOLUNTEER]}
-          <Separator />
-          {SectionMapping[ResumeSections.REFERENCES]}
-
-          {/* Custom Sections */}
-          {SectionMapping[ResumeSections.CUSTOM]}
+          {sections}
         </div>
       </ScrollArea>
     </div>

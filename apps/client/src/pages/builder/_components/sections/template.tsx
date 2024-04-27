@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 import { useResumeStore } from "@/client/stores/resume";
 
-import { getSectionIcon } from "../shared/section-icon";
+import { getMetaDataSectionIcon } from "../shared/metadata-section-icon";
 
 export const TemplateSection = () => {
   const setValue = useResumeStore((state) => state.setValue);
@@ -15,7 +15,7 @@ export const TemplateSection = () => {
     <section id="template" className="grid gap-y-6">
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
-          {getSectionIcon("template")}
+          {getMetaDataSectionIcon("template")}
           <h2 className="line-clamp-1 text-3xl font-bold">{t`Template`}</h2>
         </div>
       </header>

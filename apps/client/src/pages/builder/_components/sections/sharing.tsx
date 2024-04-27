@@ -7,7 +7,7 @@ import { useToast } from "@/client/hooks/use-toast";
 import { useUser } from "@/client/services/user";
 import { useResumeStore } from "@/client/stores/resume";
 
-import { getSectionIcon } from "../shared/section-icon";
+import { getMetaDataSectionIcon } from "../shared/metadata-section-icon";
 
 export const SharingSection = () => {
   const { user } = useUser();
@@ -35,7 +35,7 @@ export const SharingSection = () => {
     <section id="sharing" className="grid gap-y-6">
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
-          {getSectionIcon("sharing")}
+          {getMetaDataSectionIcon("sharing")}
           <h2 className="line-clamp-1 text-3xl font-bold">{t`Sharing`}</h2>
         </div>
       </header>

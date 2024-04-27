@@ -10,7 +10,7 @@ import {
 } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 
-import { getSectionIcon } from "../shared/section-icon";
+import { getMetaDataSectionIcon } from "../shared/metadata-section-icon";
 
 const DonateCard = () => (
   <Card className="space-y-4 bg-info text-info-foreground">
@@ -118,7 +118,7 @@ export const InformationSection = () => {
     <section id="information" className="grid gap-y-6">
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
-          {getSectionIcon("information")}
+          {getMetaDataSectionIcon("information")}
           <h2 className="line-clamp-1 text-3xl font-bold">{t`Information`}</h2>
         </div>
       </header>

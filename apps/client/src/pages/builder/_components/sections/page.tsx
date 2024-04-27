@@ -12,7 +12,7 @@ import {
 
 import { useResumeStore } from "@/client/stores/resume";
 
-import { getSectionIcon } from "../shared/section-icon";
+import { getMetaDataSectionIcon } from "../shared/metadata-section-icon";
 
 export const PageSection = () => {
   const setValue = useResumeStore((state) => state.setValue);
@@ -22,7 +22,7 @@ export const PageSection = () => {
     <section id="theme" className="grid gap-y-6">
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
-          {getSectionIcon("page")}
+          {getMetaDataSectionIcon("page")}
           <h2 className="line-clamp-1 text-3xl font-bold">{t`Page`}</h2>
         </div>
       </header>

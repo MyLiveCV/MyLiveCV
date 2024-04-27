@@ -34,7 +34,7 @@ import { useState } from "react";
 
 import { useResumeStore } from "@/client/stores/resume";
 
-import { getSectionIcon } from "../shared/section-icon";
+import { getMetaDataSectionIcon } from "../shared/metadata-section-icon";
 
 type ColumnProps = {
   id: string;
@@ -203,7 +203,7 @@ export const LayoutSection = () => {
     <section id="layout" className="grid gap-y-6">
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
-          {getSectionIcon("layout")}
+          {getMetaDataSectionIcon("layout")}
           <h2 className="line-clamp-1 text-3xl font-bold">{t`Layout`}</h2>
         </div>
 

@@ -6,11 +6,10 @@ import { useMemo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { getSectionIcon } from "@/client/pages/builder/_components/sections/shared/section-icon";
-import { SectionMapping } from "@/client/pages/builder/_helper/section";
+import { SectionMapping, SectionSteps } from "@/client/pages/builder/_helper/section";
 import { useBuilderStore } from "@/client/stores/builder";
 import { useTemporalResumeStore } from "@/client/stores/resume";
 
-import { Steps } from ".";
 import { Options } from "./options";
 
 export const SectionArea = () => {
@@ -31,21 +30,23 @@ export const SectionArea = () => {
   };
 
   const nextSection = useMemo(() => {
-    const stepIndex = Steps.findIndex((s) => s === currentStep);
-    return Steps[stepIndex + 1];
-  }, [Steps, currentStep]);
+    const stepIndex = SectionSteps.findIndex((s) => s === currentStep);
+    return SectionSteps[stepIndex + 1];
+  }, [SectionSteps, currentStep]);
 
   const previousSection = useMemo(() => {
-    const stepIndex = Steps.findIndex((s) => s === currentStep);
-    return Steps[stepIndex - 1];
-  }, [Steps, currentStep]);
+    const stepIndex = SectionSteps.findIndex((s) => s === currentStep);
+    return SectionSteps[stepIndex - 1];
+  }, [SectionSteps, currentStep]);
+
+  const Section = SectionMapping[currentStep] as React.FC;
 
   return activeSection.left.openOption ? (
     <Options />
   ) : (
     <ScrollArea orientation="vertical" className="flex-1 sm:h-screen">
       <div className="grid gap-y-6 p-6 @container/left">
-        {SectionMapping[currentStep]}
+        <Section />
 
         <div className="grid grid-cols-3 gap-y-6 sm:mb-[100px]">
           {previousSection && (

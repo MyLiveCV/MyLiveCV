@@ -27,7 +27,7 @@ export type MetadataKey =
   | "notes"
   | "information";
 
-export const getSectionIcon = (id: MetadataKey, props: IconProps = {}) => {
+export const getMetaDataSectionIcon = (id: MetadataKey, props: IconProps = {}) => {
   switch (id) {
     // Left Sidebar
     case "notes":
@@ -58,16 +58,16 @@ export const getSectionIcon = (id: MetadataKey, props: IconProps = {}) => {
   }
 };
 
-type SectionIconProps = ButtonProps & {
+type MetaDataSectionIconProps = ButtonProps & {
   id: MetadataKey;
   name: string;
   icon?: React.ReactNode;
 };
 
-export const SectionIcon = ({ id, name, icon, ...props }: SectionIconProps) => (
+export const MetadataSectionIcon = ({ id, name, icon, ...props }: MetaDataSectionIconProps) => (
   <Tooltip side="left" content={name}>
     <Button size="icon" variant="ghost" className="size-8 rounded-full" {...props}>
-      {icon ?? getSectionIcon(id, { size: 14 })}
+      {icon ?? getMetaDataSectionIcon(id, { size: 14 })}
     </Button>
   </Tooltip>
 );

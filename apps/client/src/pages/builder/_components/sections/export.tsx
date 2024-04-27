@@ -7,7 +7,7 @@ import { saveAs } from "file-saver";
 import { usePrintResume } from "@/client/services/resume/print";
 import { useResumeStore } from "@/client/stores/resume";
 
-import { getSectionIcon } from "../shared/section-icon";
+import { getMetaDataSectionIcon } from "../shared/metadata-section-icon";
 
 export const ExportSection = () => {
   const { printResume, loading } = usePrintResume();
@@ -36,7 +36,7 @@ export const ExportSection = () => {
     <section id="export" className="grid gap-y-6">
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
-          {getSectionIcon("export")}
+          {getMetaDataSectionIcon("export")}
           <h2 className="line-clamp-1 text-3xl font-bold">{t`Export`}</h2>
         </div>
       </header>
