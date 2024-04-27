@@ -1,12 +1,8 @@
 import { t } from "@lingui/macro";
 import { Plus } from "@phosphor-icons/react";
-import { Button } from "@reactive-resume/ui";
 import { ResumeSections } from "@reactive-resume/utils";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-import { Icon } from "@/client/components/icon";
-import { UserAvatar } from "@/client/components/user-avatar";
-import { UserOptions } from "@/client/components/user-options";
 import { SectionIcon } from "@/client/pages/builder/_components/sections/shared/section-icon";
 
 export const SectionBar = () => {
@@ -20,12 +16,6 @@ export const SectionBar = () => {
 
   return (
     <div className="hidden basis-12 flex-col items-center justify-between bg-secondary-accent/30 py-4 sm:flex">
-      <Button asChild size="icon" variant="ghost" className="size-8 rounded-full">
-        <Link to="/dashboard">
-          <Icon size={14} />
-        </Link>
-      </Button>
-
       <div className="flex flex-col items-center justify-center gap-y-2">
         <SectionIcon
           id={ResumeSections.BASICS}
@@ -98,12 +88,6 @@ export const SectionBar = () => {
           }}
         />
       </div>
-
-      <UserOptions>
-        <Button size="icon" variant="ghost" className="rounded-full">
-          <UserAvatar size={28} />
-        </Button>
-      </UserOptions>
     </div>
   );
 };

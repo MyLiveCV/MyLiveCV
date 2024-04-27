@@ -1,6 +1,7 @@
 import { t } from "@lingui/macro";
 import { ResumeDto } from "@reactive-resume/dto";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@reactive-resume/ui";
+import { ResumeSections } from "@reactive-resume/utils";
 import dayjs from "dayjs";
 import { AnimatePresence, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -23,7 +24,7 @@ export const ResumeListItem = ({ resume }: Props) => {
   const lastUpdated = dayjs().to(resume.updatedAt);
 
   const onOpen = () => {
-    navigate(`/builder/${resume.id}`);
+    navigate(`/builder/${resume.id}/${ResumeSections.BASICS}`);
   };
 
   const dropdownMenu = <OptionMenu resume={resume} />;

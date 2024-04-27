@@ -17,7 +17,7 @@ import {
 } from "@reactive-resume/schema";
 import { Button, Separator } from "@reactive-resume/ui";
 import { ResumeOptions, ResumeSections } from "@reactive-resume/utils";
-import { Fragment } from "react";
+import { Fragment, ReactNode } from "react";
 
 import { Copyright } from "@/client/components/copyright";
 import { BasicsSection } from "@/client/pages/builder/_components/sections/basics";

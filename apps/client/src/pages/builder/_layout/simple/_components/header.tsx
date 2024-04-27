@@ -4,8 +4,11 @@ import { Button, Tooltip } from "@reactive-resume/ui";
 import { cn, ResumeOptions, ResumeSections } from "@reactive-resume/utils";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
+import { Icon } from "@/client/components/icon";
 import { LocaleSwitch } from "@/client/components/locale-switch";
 import { ThemeSwitch } from "@/client/components/theme-switch";
+import { UserAvatar } from "@/client/components/user-avatar";
+import { UserOptions } from "@/client/components/user-options";
 import { useBuilderStore } from "@/client/stores/builder";
 import { useResumeStore } from "@/client/stores/resume";
 
@@ -32,12 +35,21 @@ export const BuilderHeader = () => {
   return (
     <div
       className={cn(
-        "inset-x-0 top-0 z-[50] w-full bg-secondary-accent/50 backdrop-blur-lg lg:z-20",
+        "inset-x-0 top-0 z-50 w-full bg-secondary-accent/50 backdrop-blur-lg lg:z-20",
         !isDragging && "transition-[left,right]",
       )}
     >
       <div className="flex h-full items-center justify-between px-4">
-        <div className="flex items-center justify-center gap-x-1 lg:mx-auto">
+        <div className="flex">
+          <Button asChild size="icon" variant="ghost" className="size-8 rounded-full">
+            <Link to="/dashboard">
+              <Icon size={14} />
+            </Link>
+          </Button>
+        </div>
+
+        {/* Hide for Small devices */}
+        <div className="invisible flex items-center justify-center gap-x-1 sm:visible lg:mx-auto">
           <Button asChild size="icon" variant="ghost">
             <Link to="/dashboard/resumes">
               <HouseSimple />
@@ -70,6 +82,13 @@ export const BuilderHeader = () => {
           >
             <SidebarSimple className="-scale-x-100" />
           </Button>
+
+          {/* User Sections */}
+          <UserOptions>
+            <Button size="icon" variant="ghost" className="rounded-full">
+              <UserAvatar size={28} />
+            </Button>
+          </UserOptions>
         </div>
       </div>
     </div>
