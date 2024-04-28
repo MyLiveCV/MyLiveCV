@@ -19,7 +19,7 @@ import { Plus } from "@phosphor-icons/react";
 import { SectionItem, SectionKey, SectionWithItem } from "@reactive-resume/schema";
 import { Button } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import get from "lodash.get";
 
 import { useDialog } from "@/client/stores/dialog";
@@ -77,13 +77,14 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
   };
 
   return (
-    <motion.section
-      id={id}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="grid gap-y-6"
-    >
+    // <motion.section
+    //   id={id}
+    //   initial={{ opacity: 0 }}
+    //   animate={{ opacity: 1 }}
+    //   exit={{ opacity: 0 }}
+    //   className="grid gap-y-6"
+    // >
+    <section id={id} className="grid gap-y-6">
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
           {getSectionIcon(id)}
@@ -152,6 +153,7 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
           </Button>
         </footer>
       )}
-    </motion.section>
+    </section>
+    // </motion.section>
   );
 };

@@ -7,6 +7,7 @@ import {
   Exam,
   MagicWand,
   PenNib,
+  X,
 } from "@phosphor-icons/react";
 import {
   Badge,
@@ -16,6 +17,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
   Popover,
+  PopoverArrow,
+  PopoverClose,
   PopoverContent,
   PopoverTrigger,
 } from "@reactive-resume/ui";
@@ -31,7 +34,7 @@ import { changeTone as palmChangeTone } from "../services/palm/change-tone";
 import { fixGrammar as palmFixGrammar } from "../services/palm/fix-grammar";
 import { improveWriting as palmImproveWriting } from "../services/palm/improve-writing";
 import { useOpenAiStore } from "../stores/openai";
-import { Suggestions } from "./suggestions/suggestions";
+import { Suggestions } from "./suggestions";
 
 type Action = "improve" | "fix" | "tone";
 type Mood = "casual" | "professional" | "confident" | "friendly";
@@ -105,6 +108,12 @@ export const AiActions = ({ editor, className, sectionName }: Props) => {
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-[360px]">
+            <PopoverArrow style={{ fill: "white" }} />
+            <div className="flex justify-end">
+              <PopoverClose className="justify-end">
+                <X />
+              </PopoverClose>
+            </div>
             <Suggestions editor={editor} content={editor.getText()} sectionName={sectionName} />
           </PopoverContent>
         </Popover>
