@@ -24,6 +24,10 @@ export const SectionArea = () => {
     navigate(`/builder/${params.id}/${sectionId}`);
   };
 
+  const handleFinalizeClick = () => {
+    navigate(`/builder/${params.id}`);
+  };
+
   const onStep = (section: ResumeSections) => {
     handleSectionClick(section);
     clearHistory();
@@ -60,13 +64,21 @@ export const SectionArea = () => {
             </Button>
           )}
 
-          {nextSection && (
+          {nextSection ? (
             <Button
               className="col-span-1 col-start-3 gap-x-2"
               type="button"
               onClick={() => onStep(nextSection)}
             >
               {t`Next`} {getSectionIcon(nextSection as SectionKey)}
+            </Button>
+          ) : (
+            <Button
+              className="col-span-1 col-start-3 gap-x-2"
+              type="button"
+              onClick={handleFinalizeClick}
+            >
+              {t`Finalize`}
             </Button>
           )}
         </div>

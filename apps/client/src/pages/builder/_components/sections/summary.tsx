@@ -6,7 +6,12 @@ import { AiActions } from "@/client/components/ai-actions";
 import { useResumeStore } from "@/client/stores/resume";
 
 import { getSectionIcon } from "./shared/section-icon";
-import { SectionOptions } from "./shared/section-options";
+import {
+  SectionColumns,
+  SectionOptions,
+  SectionRename,
+  SectionVisibility,
+} from "./shared/section-options";
 
 export const SummarySection = () => {
   const setValue = useResumeStore((state) => state.setValue);
@@ -20,6 +25,12 @@ export const SummarySection = () => {
         <div className="flex items-center gap-x-4">
           {getSectionIcon(ResumeSections.SUMMARY)}
           <h2 className="line-clamp-1 text-3xl font-bold">{section.name}</h2>
+
+          <div className="invisible flex items-center sm:visible">
+            <SectionRename id={ResumeSections.SUMMARY} />
+            <SectionVisibility id={ResumeSections.SUMMARY} />
+            <SectionColumns id={ResumeSections.SUMMARY} />
+          </div>
         </div>
 
         <div className="flex items-center gap-x-2">

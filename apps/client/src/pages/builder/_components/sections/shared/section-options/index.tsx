@@ -133,3 +133,7 @@ export const SectionOptions = ({ id }: Props) => {
     </DropdownMenu>
   );
 };
+
+export * from "./columns";
+export * from "./rename";
+export * from "./visibility";

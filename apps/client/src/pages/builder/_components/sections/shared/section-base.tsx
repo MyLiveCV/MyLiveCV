@@ -27,7 +27,12 @@ import { useResumeStore } from "@/client/stores/resume";
 
 import { getSectionIcon } from "./section-icon";
 import { SectionListItem } from "./section-list-item";
-import { SectionOptions } from "./section-options";
+import {
+  SectionColumns,
+  SectionOptions,
+  SectionRename,
+  SectionVisibility,
+} from "./section-options";
 
 type Props<T extends SectionItem> = {
   id: SectionKey;
@@ -90,6 +95,12 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
           {getSectionIcon(id)}
 
           <h2 className="line-clamp-1 text-3xl font-bold">{section.name}</h2>
+
+          <div className="invisible flex items-center sm:visible">
+            <SectionRename id={id} />
+            <SectionVisibility id={id} />
+            <SectionColumns id={id} />
+          </div>
         </div>
 
         <div className="flex items-center gap-x-2">

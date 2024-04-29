@@ -88,19 +88,21 @@ const CustomSections = () => {
           <h2 className="line-clamp-1 text-3xl font-bold">{t`Custom Sections`}</h2>
         </div>
       </header>
-      <Separator className="my-4" />
-      {Object.values(customSections).map((section) => (
-        <Fragment key={section.id}>
-          {/* <Separator /> */}
+      <div className="ml-4">
+        <Separator className="my-4" />
+        {Object.values(customSections).map((section) => (
+          <Fragment key={section.id}>
+            {/* <Separator /> */}
 
-          <SectionBase<CustomSection>
-            id={`${ResumeSections.CUSTOM}.${section.id}`}
-            title={(item) => item.name}
-            description={(item) => item.description}
-          />
-        </Fragment>
-      ))}
-      <Separator className="mb-4" />
+            <SectionBase<CustomSection>
+              id={`${ResumeSections.CUSTOM}.${section.id}`}
+              title={(item) => item.name}
+              description={(item) => item.description}
+            />
+          </Fragment>
+        ))}
+        <Separator className="mb-4" />
+      </div>
       <Button size="lg" variant="outline" onClick={addSection}>
         <PlusCircle />
         <span className="ml-2">{t`Add a new section`}</span>
