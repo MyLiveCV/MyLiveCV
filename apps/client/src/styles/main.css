@@ -6,3 +6,10 @@
 * {
   @apply border-border/50;
 }
+
+/* Disable Printing the Page*/
+@media print {
+  html, body {
+     display: none;  /* hide whole page */
+  }
+}
