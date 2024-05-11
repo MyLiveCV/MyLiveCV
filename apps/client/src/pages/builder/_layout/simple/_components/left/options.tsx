@@ -1,9 +1,7 @@
-import { t } from "@lingui/macro";
 import { ScrollArea } from "@reactive-resume/ui";
-import { ResumeOptions } from "@reactive-resume/utils";
+import { Fragment, useMemo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-import { MetadataSectionIcon } from "@/client/pages/builder/_components/shared/metadata-section-icon";
 import {
   ResumeOptionsSteps,
   SectionIconsMapping,
@@ -11,7 +9,6 @@ import {
   SectionMapping,
 } from "@/client/pages/builder/_helper/section";
 import { useBuilderStore } from "@/client/stores/builder";
-import { Fragment, useMemo } from "react";
 
 export const Options = () => {
   const activeSection = useBuilderStore((state) => state.activeSection.left);
