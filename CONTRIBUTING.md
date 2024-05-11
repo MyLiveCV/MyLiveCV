@@ -1,4 +1,4 @@
-# Contributing to Reactive Resume
+# Contributing to My Live CV
 
 ## Getting the project set up locally
 

@@ -18,10 +18,16 @@ export const useLogout = () => {
     onSuccess: () => {
       setUser(null);
       queryClient.setQueryData(["user"], null);
+      queryClient.clear();
+      queryClient.removeQueries();
+      queryClient.invalidateQueries();
     },
     onError: () => {
       setUser(null);
       queryClient.setQueryData(["user"], null);
+      queryClient.clear();
+      queryClient.removeQueries();
+      queryClient.invalidateQueries();
     },
   });
 

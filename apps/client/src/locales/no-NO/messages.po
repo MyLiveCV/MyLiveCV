@@ -35,8 +35,8 @@ msgid "<0><1>Stand out from the crowd: </1> Capture recruiter attention with a d
 msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/information.tsx:20
-msgid "<0>I built Reactive Resume mostly by myself during my spare time, with a lot of help from other great open-source contributors.</0><1>If you like the app and want to support keeping it free forever, please donate whatever you can afford to give.</1>"
-msgstr "<0>Jeg bygde Reactive Resume for det meste alene på fritiden, med mye hjelp fra andre gode bidragsytere med åpen kildekode.</0> <1>Hvis du liker appen og ønsker å støtte å holde den gratis for alltid, vennligst doner det du har råd til å gi.</1>"
+msgid "<0>I built My Live CV mostly by myself during my spare time, with a lot of help from other great open-source contributors.</0><1>If you like the app and want to support keeping it free forever, please donate whatever you can afford to give.</1>"
+msgstr "<0>Jeg bygde My Live CV for det meste alene på fritiden, med mye hjelp fra andre gode bidragsytere med åpen kildekode.</0> <1>Hvis du liker appen og ønsker å støtte å holde den gratis for alltid, vennligst doner det du har råd til å gi.</1>"
 
 #: apps/client/src/pages/builder/_components/sections/information.tsx:51
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
@@ -47,16 +47,16 @@ msgid "<0>Manage your Payment related information.</0> You can cancel your subsc
 msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:126
-msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
-msgstr "<0>Merk:</0> Ved å bruke OpenAI API, erkjenner og godtar du <1>bruksvilkårene</1> og <2>personvernreglene</2> skissert av OpenAI. Vær oppmerksom på at Reactive Resume ikke har noe ansvar for feil eller uautorisert bruk av tjenesten, og eventuelle følgevirkninger eller ansvar hviler utelukkende på brukeren."
+msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that My Live CV bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
+msgstr "<0>Merk:</0> Ved å bruke OpenAI API, erkjenner og godtar du <1>bruksvilkårene</1> og <2>personvernreglene</2> skissert av OpenAI. Vær oppmerksom på at My Live CV ikke har noe ansvar for feil eller uautorisert bruk av tjenesten, og eventuelle følgevirkninger eller ansvar hviler utelukkende på brukeren."
 
 #: apps/client/src/pages/home/sections/faq/index.tsx:80
-msgid "<0>OpenAI has been a game-changer for all of us. I cannot tell you how much ChatGPT has helped me in my everyday work and with the development of Reactive Resume. It only makes sense that you leverage what AI has to offer and let it help you build the perfect resume.</0><1>While most applications out there charge you a fee to use their AI services (rightfully so, because it isn't cheap), you can choose to enter your own OpenAI API key on the Settings page (under OpenAI Integration). <2>The key is stored in your browser's local storage</2>, which means that if you uninstall your browser, or even clear your data, the key is gone with it. All requests made to OpenAI are also sent directly to their service and does not hit the app servers at all.</1><3>The policy behind 'bring your own key' (BYOK) is <4>still being discussed</4> and probably might change over a period of time, but while it's available, I would keep the feature on the app.</3><5>You are free to turn off all AI features (and not be aware of it's existence) simply by not adding a key in the Settings page and still make use of all the useful features that Reactive Resume has to offer. I would even suggest you to take the extra step of using ChatGPT to write your content, and simply copy it over to Reactive Resume.</5>"
+msgid "<0>OpenAI has been a game-changer for all of us. I cannot tell you how much ChatGPT has helped me in my everyday work and with the development of My Live CV. It only makes sense that you leverage what AI has to offer and let it help you build the perfect resume.</0><1>While most applications out there charge you a fee to use their AI services (rightfully so, because it isn't cheap), you can choose to enter your own OpenAI API key on the Settings page (under OpenAI Integration). <2>The key is stored in your browser's local storage</2>, which means that if you uninstall your browser, or even clear your data, the key is gone with it. All requests made to OpenAI are also sent directly to their service and does not hit the app servers at all.</1><3>The policy behind 'bring your own key' (BYOK) is <4>still being discussed</4> and probably might change over a period of time, but while it's available, I would keep the feature on the app.</3><5>You are free to turn off all AI features (and not be aware of it's existence) simply by not adding a key in the Settings page and still make use of all the useful features that My Live CV has to offer. I would even suggest you to take the extra step of using ChatGPT to write your content, and simply copy it over to My Live CV.</5>"
 msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/information.tsx:90
-msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
-msgstr "<0>Fellesskapet har brukt mye tid på å skrive dokumentasjonen for Reactive Resume, og jeg er sikker på at det vil hjelpe deg med å komme i gang med appen.</0><1>Det er også mange eksempler som hjelper deg med å komme i gang, og funksjoner du kanskje ikke visste om som kan hjelpe deg med å skape din perfekte CV.</1>"
+msgid "<0>The community has spent a lot of time writing the documentation for My Live CV, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
+msgstr "<0>Fellesskapet har brukt mye tid på å skrive dokumentasjonen for My Live CV, og jeg er sikker på at det vil hjelpe deg med å komme i gang med appen.</0><1>Det er også mange eksempler som hjelper deg med å komme i gang, og funksjoner du kanskje ikke visste om som kan hjelpe deg med å skape din perfekte CV.</1>"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:146
 msgid "<0>Two-factoer authentication is currently disabled.</0> You can enable it by adding an authenticator app to your account."
@@ -486,8 +486,8 @@ msgid "Don't see your language? <0>Help translate the app.</0>"
 msgstr "Ser du ikke språket ditt? <0>Hjelp med å oversette appen.</0>"
 
 #: apps/client/src/pages/builder/_components/sections/information.tsx:40
-msgid "Donate to Reactive Resume"
-msgstr "Doner til Reactive Resume"
+msgid "Donate to My Live CV"
+msgstr "Doner til My Live CV"
 
 #: apps/client/src/pages/builder/_components/sections/export.tsx:56
 msgid "Download a JSON snapshot of your resume. This file can be used to import your resume in the future, or can even be shared with others to collaborate."
@@ -577,8 +577,8 @@ msgid "Errors"
 msgstr "Feil"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:78
-msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Reactive Resume has helped you. Your feedback and support are always welcome and much appreciated!"
-msgstr "Selv om du ikke er i stand til å bidra økonomisk, kan du fortsatt gjøre en forskjell ved å gi GitHub-depotet en stjerne, spre ordet til vennene dine eller sende en rask melding for å fortelle meg hvordan Reactive Resume har hjulpet deg. Din tilbakemelding og støtte er alltid velkommen og settes stor pris på!"
+msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how My Live CV has helped you. Your feedback and support are always welcome and much appreciated!"
+msgstr "Selv om du ikke er i stand til å bidra økonomisk, kan du fortsatt gjøre en forskjell ved å gi GitHub-depotet en stjerne, spre ordet til vennene dine eller sende en rask melding for å fortelle meg hvordan My Live CV har hjulpet deg. Din tilbakemelding og støtte er alltid velkommen og settes stor pris på!"
 
 #: apps/client/src/pages/home/sections/keywords/index.tsx:70
 msgid "Experience the pinnacle of professional resume creation with our feature-rich Resume Builder. From multimedia integration to real-time updates, unlock a suite of sophisticated tools. Elevate your digital presence and career prospects with unparalleled features. Explore now for a distinguished resume that commands attention and enhances your professional standing."
@@ -778,8 +778,8 @@ msgid "How does your AI resume builder work?"
 msgstr ""
 
 #: apps/client/src/pages/home/sections/testimonials/index.tsx:70
-msgid "I always love to hear from the users of Reactive Resume with feedback or support. Here are some of the messages I've received. If you have any feedback, feel free to drop me an email at <0>{email}</0>."
-msgstr "Jeg elsker alltid å høre fra brukerne av Reactive Resume med tilbakemeldinger eller støtte. Her er noen av tilbakemeldingene jeg har mottatt. Hvis du har en tilbakemelding, send meg gjerne en e-post på <0>{email}</0>."
+msgid "I always love to hear from the users of My Live CV with feedback or support. Here are some of the messages I've received. If you have any feedback, feel free to drop me an email at <0>{email}</0>."
+msgstr "Jeg elsker alltid å høre fra brukerne av My Live CV med tilbakemeldinger eller støtte. Her er noen av tilbakemeldingene jeg har mottatt. Hvis du har en tilbakemelding, send meg gjerne en e-post på <0>{email}</0>."
 
 #: apps/client/src/pages/builder/_components/dialogs/profiles.tsx:87
 msgid "Icon"
@@ -1250,16 +1250,16 @@ msgstr "Ta opp et problem"
 #: apps/client/src/pages/pricing/page.tsx:17
 #: apps/client/src/pages/public/page.tsx:71
 #: apps/client/src/pages/public/page.tsx:93
-msgid "Reactive Resume"
-msgstr "Reactive Resume"
+msgid "My Live CV"
+msgstr "My Live CV"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:12
-msgid "Reactive Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Reactive Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
-msgstr "Reactive Resume er et gratis og åpen kildekodeprosjekt hovedsakelig utviklet av meg, og din støtte ville satt stor pris på. Hvis du har lyst til å bidra, og bare hvis du har råd til det, kan du vurdere å gi en donasjon gjennom noen av de oppførte plattformene. I tillegg er donasjoner til Reactive Resume gjennom Open Collective skattefrie, da prosjektet er økonomisk vert av Open Collective Europe."
+msgid "My Live CV is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to My Live CV through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
+msgstr "My Live CV er et gratis og åpen kildekodeprosjekt hovedsakelig utviklet av meg, og din støtte ville satt stor pris på. Hvis du har lyst til å bidra, og bare hvis du har råd til det, kan du vurdere å gi en donasjon gjennom noen av de oppførte plattformene. I tillegg er donasjoner til My Live CV gjennom Open Collective skattefrie, da prosjektet er økonomisk vert av Open Collective Europe."
 
 #: apps/client/src/pages/home/sections/contributors/index.tsx:22
-msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
-msgstr "Reactive Resume trives takket være sitt pulserende fellesskap. Dette prosjektet skylder sin fremgang takket være mange personer som har dedikert sin tid og ferdigheter. Nedenfor feirer vi koderne som har forbedret funksjonene på GitHub og lingvistene som med sine oversettelser på Crowdin har gjort det tilgjengelig for et bredere publikum."
+msgid "My Live CV thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
+msgstr "My Live CV trives takket være sitt pulserende fellesskap. Dette prosjektet skylder sin fremgang takket være mange personer som har dedikert sin tid og ferdigheter. Nedenfor feirer vi koderne som har forbedret funksjonene på GitHub og lingvistene som med sine oversettelser på Crowdin har gjort det tilgjengelig for et bredere publikum."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:37
 msgid "Real-Time Engagement Tracking"
@@ -1539,8 +1539,8 @@ msgid "Support the app by donating what you can!"
 msgstr "Støtt appen ved å donere det du kan!"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:9
-msgid "Supporting Reactive Resume"
-msgstr "Støtter Reactive Resume"
+msgid "Supporting My Live CV"
+msgstr "Støtter My Live CV"
 
 #: apps/client/src/pages/home/sections/keywords/index.tsx:57
 msgid "Supports A4/Letter page formats"
@@ -1722,8 +1722,8 @@ msgid "Update an existing resume"
 msgstr "Oppdater en eksisterende CV"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:212
-msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
-msgstr "Last opp en fil fra en av de aksepterte kildene for å analysere eksisterende data og importere den til Reactive Resume for enklere redigering."
+msgid "Upload a file from one of the accepted sources to parse existing data and import it into My Live CV for easier editing."
+msgstr "Last opp en fil fra en av de aksepterte kildene for å analysere eksisterende data og importere den til My Live CV for enklere redigering."
 
 #: apps/client/src/pages/builder/_components/sections/sharing.tsx:73
 msgid "URL"
@@ -1832,12 +1832,12 @@ msgid "You can track the number of views your resume has received, or how many p
 msgstr "Du kan spore antall visninger CV-en din har mottatt, eller hvor mange personer som har lastet ned CV-en ved å aktivere offentlig deling."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:60
-msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
-msgstr "Du har muligheten til å <0>skaffe din egen OpenAI API-nøkkel</0>. Denne nøkkelen gir deg mulighet til å utnytte API-en slik det passer deg. Alternativt, hvis du ønsker å deaktivere KI-funksjonene i Reactive Resume helt, kan du ganske enkelt fjerne nøkkelen fra innstillingene dine."
+msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in My Live CV altogether, you can simply remove the key from your settings."
+msgstr "Du har muligheten til å <0>skaffe din egen OpenAI API-nøkkel</0>. Denne nøkkelen gir deg mulighet til å utnytte API-en slik det passer deg. Alternativt, hvis du ønsker å deaktivere KI-funksjonene i My Live CV helt, kan du ganske enkelt fjerne nøkkelen fra innstillingene dine."
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:50
-msgid "You should have received an email from <0>Reactive Resume</0> with a link to verify your account."
-msgstr "Du skal ha mottatt en e-post fra <0>Reactive Resume</0> med en lenke for å bekrefte kontoen din."
+msgid "You should have received an email from <0>My Live CV</0> with a link to verify your account."
+msgstr "Du skal ha mottatt en e-post fra <0>My Live CV</0> med en lenke for å bekrefte kontoen din."
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/forgot-password/page.tsx:54

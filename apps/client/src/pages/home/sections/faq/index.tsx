@@ -80,8 +80,8 @@ const Question5 = () => (
       <Trans>
         <p>
           OpenAI has been a game-changer for all of us. I cannot tell you how much ChatGPT has
-          helped me in my everyday work and with the development of Reactive Resume. It only makes
-          sense that you leverage what AI has to offer and let it help you build the perfect resume.
+          helped me in my everyday work and with the development of My Live CV. It only makes sense
+          that you leverage what AI has to offer and let it help you build the perfect resume.
         </p>
 
         <p>
@@ -110,8 +110,8 @@ const Question5 = () => (
         <p>
           You are free to turn off all AI features (and not be aware of it's existence) simply by
           not adding a key in the Settings page and still make use of all the useful features that
-          Reactive Resume has to offer. I would even suggest you to take the extra step of using
-          ChatGPT to write your content, and simply copy it over to Reactive Resume.
+          My Live CV has to offer. I would even suggest you to take the extra step of using ChatGPT
+          to write your content, and simply copy it over to My Live CV.
         </p>
       </Trans>
     </AccordionContent>

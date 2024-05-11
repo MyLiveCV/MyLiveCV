@@ -10,7 +10,7 @@ export const SocialAuth = () => {
   if (!providers || providers.length === 0) return null;
 
   return (
-    <div className="grid grid-cols-1 gap-4">
+    <div className="flex flex-col gap-4 sm:flex-row">
       {providers.includes("google") && (
         <Button
           asChild

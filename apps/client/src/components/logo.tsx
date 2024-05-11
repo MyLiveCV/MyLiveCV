@@ -25,7 +25,7 @@ export const Logo = ({ size = 32, className }: Props) => {
       src={src}
       width={size}
       height={size}
-      alt="Reactive Resume"
+      alt="My Live CV"
       className={cn("rounded-sm", className)}
     />
   );

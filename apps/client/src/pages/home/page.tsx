@@ -18,7 +18,7 @@ export const HomePage = () => {
         <html lang={i18n.locale} />
 
         <title>
-          {t`Reactive Resume`} - {t`A free and open-source resume builder`}
+          {t`My Live CV`} - {t`A free and open-source resume builder`}
         </title>
 
         <meta

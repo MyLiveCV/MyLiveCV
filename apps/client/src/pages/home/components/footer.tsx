@@ -14,7 +14,7 @@ export const Footer = () => (
       <div className="flex flex-col gap-y-2">
         <Logo size={96} className="-ml-2" />
 
-        <h2 className="text-xl font-medium">{t`Reactive Resume`}</h2>
+        <h2 className="text-xl font-medium">{t`My Live CV`}</h2>
 
         <p className="prose prose-sm prose-zinc leading-relaxed opacity-60 dark:prose-invert">
           {t`Elevate Your Professional Story: Craft a Dynamic, AI-Powered Live Resume with Our Innovative Resume Builder.`}
