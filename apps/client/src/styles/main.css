@@ -9,7 +9,8 @@
 
 /* Disable Printing the Page*/
 @media print {
-  html, body {
-     display: none;  /* hide whole page */
+  html,
+  body {
+    display: none; /* hide whole page */
   }
 }

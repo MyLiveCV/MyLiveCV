@@ -139,7 +139,6 @@ services:
       # -- App Features --
       VITE_RESUME_PREVIEW: false
 
-
 volumes:
   minio_data:
   postgres_data:
