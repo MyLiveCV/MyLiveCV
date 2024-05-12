@@ -1,7 +1,7 @@
 /* eslint-disable lingui/text-restrictions */
 /* eslint-disable lingui/no-unlocalized-strings */
 import { t } from "@lingui/macro";
-import { PalmGenerateTextRequest, PalmGenerateTextResponse } from "@reactive-resume/schema";
+import { RecommendationRequest } from "@reactive-resume/schema";
 import { ResumeSections } from "@reactive-resume/utils";
 import { AxiosResponse } from "axios";
 
@@ -49,24 +49,17 @@ type Response = {
 };
 
 export const palmSuggestions = async (text: string, sectionName: ResumeSections) => {
-  const prompt = PROMPT[sectionName]?.replace("{input}", text);
-  const response = await axios.post<
-    PalmGenerateTextResponse,
-    AxiosResponse<PalmGenerateTextResponse>,
-    PalmGenerateTextRequest
-  >("/recommendations/text", {
-    model: "models/text-bison-001",
-    prompt: {
-      text: prompt,
-    },
-    stopSequences: ['"""'],
-  } as PalmGenerateTextRequest);
+  const prompt = PROMPT[sectionName]?.replace("{input}", text) || text;
+  const response = await axios.post<string, AxiosResponse<string>, RecommendationRequest>(
+    "/recommendations/text",
+    { prompt },
+  );
 
-  if (!response.data[0].candidates || !response.data[0].candidates[0].output) {
+  if (!response.data) {
     throw new Error(t`AI did not return any choices for your text.`);
   }
 
-  const result = response.data[0].candidates[0].output;
+  const result = response.data;
   let data: Response;
   try {
     data = JSON.parse(result) as Response;

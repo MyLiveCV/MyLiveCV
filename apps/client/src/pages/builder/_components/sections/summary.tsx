@@ -41,8 +41,10 @@ export const SummarySection = () => {
       <main className={cn(!section.visible && "opacity-50")}>
         <RichInput
           content={section.content}
-          onChange={(value) => setValue("sections.summary.content", value)}
-          footer={(editor) => <AiActions editor={editor} sectionName={ResumeSections.SUMMARY} />}
+          onChange={(value: string) => setValue("sections.summary.content", value)}
+          footer={(editor: string) => (
+            <AiActions editor={editor} sectionName={ResumeSections.SUMMARY} />
+          )}
         />
       </main>
     </section>

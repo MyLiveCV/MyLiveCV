@@ -1,18 +1,17 @@
 import { protos } from "@google-ai/generativelanguage";
 import { z } from "zod";
 
-export const palmSummaryRequest = z.object({
+export const recommendationSummaryRequest = z.object({
   prompt: z.string(),
 });
 
-export const palmSummaryResponse = z.object({
+export const recommendationSummaryResponse = z.object({
   summary: z.string(),
 });
 
-export const palmSummaryRequestDefault = { summary: "" };
+export const recommendationSummaryRequestDefault = { summary: "" };
 
-export type PalmSummaryRequest = z.infer<typeof palmSummaryRequest>;
-export type PalmSummaryResponse = z.infer<typeof palmSummaryResponse>;
+export type RecommendationRequest = z.infer<typeof recommendationSummaryRequest>;
 
 export type PalmGenerateTextRequest =
   protos.google.ai.generativelanguage.v1beta2.GenerateTextRequest;
@@ -23,7 +22,8 @@ export type PalmGenerateTextResponse = [
   undefined,
 ];
 
-export type PalmSuggestionResponse = {
+export type RecommendationSummaryResponse = z.infer<typeof recommendationSummaryResponse>;
+export type RecommendationSuggestionResponse = {
   suggestions: string[];
   relatedJobTitles: string[];
   jobTitle: string;

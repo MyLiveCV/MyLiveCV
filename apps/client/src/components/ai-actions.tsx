@@ -56,14 +56,14 @@ export const AiActions = ({ editor, className, sectionName }: Props) => {
   const onClick = async (action: Action, mood?: Mood) => {
     try {
       setLoading(action);
-      const textToImprove = editor.getText();
+      const textToImprove = editor.getHTML();
       let result = textToImprove;
 
       if (action === "improve") result = await improveWriting(textToImprove);
       if (action === "fix") result = await fixGrammar(textToImprove);
       if (action === "tone" && mood) result = await changeTone(textToImprove, mood);
 
-      editor.commands.setContent(result);
+      editor.commands.setContent(result, true);
     } catch (error) {
       toast({
         variant: "error",

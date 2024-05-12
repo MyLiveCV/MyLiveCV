@@ -1,7 +1,7 @@
 import { v1beta2 } from "@google-ai/generativelanguage";
 import { Injectable } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
-import { PalmGenerateTextRequest, PalmSuggestionResponse } from "@reactive-resume/schema";
+import { PalmGenerateTextRequest, RecommendationSuggestionResponse } from "@reactive-resume/schema";
 import { GoogleAuth } from "google-auth-library";
 
 import { Config } from "../../config/schema";
@@ -27,7 +27,7 @@ export class PalmService {
   async getRecommendation(
     jobTitle: string,
     section: "summary" | "education" | "experience",
-  ): Promise<PalmSuggestionResponse> {
+  ): Promise<RecommendationSuggestionResponse> {
     const client = new v1beta2.TextServiceClient({
       authClient: new GoogleAuth().fromAPIKey(this.palm_key),
     });
@@ -46,7 +46,7 @@ export class PalmService {
 
     try {
       const result = data[0].candidates[0].output;
-      return JSON.parse(result) as PalmSuggestionResponse;
+      return JSON.parse(result) as RecommendationSuggestionResponse;
     } catch {
       throw new Error(`AI did not return a valid JSON.`);
     }

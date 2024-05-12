@@ -4,6 +4,7 @@ import { RedisService } from "@songkeys/nestjs-redis";
 import { PrismaService } from "nestjs-prisma";
 
 import { UtilsService } from "../utils/utils.service";
+import { GeminiService } from "./gemini/gemini.service";
 import { JobTitleService } from "./job-title/job-title.service";
 import { PalmService } from "./palm/palm.service";
 
@@ -12,6 +13,7 @@ export class RecommendationsService {
   constructor(
     private readonly prisma: PrismaService,
     private readonly palmService: PalmService,
+    private readonly geminiService: GeminiService,
     private readonly jobTitleService: JobTitleService,
     private readonly redisService: RedisService,
     private readonly utils: UtilsService,
@@ -37,7 +39,7 @@ export class RecommendationsService {
         console.log(jt);
         // Job Title: If Not exist, add Job Title and Recommendations
         if (!jt) {
-          const palmResponse = await this.palmService.getRecommendation(title, type);
+          const palmResponse = await this.geminiService.getRecommendation(title, type);
           jt = await this.jobTitleService.createJobTitle(
             palmResponse.jobTitle,
             palmResponse.relatedJobTitles,
@@ -53,8 +55,13 @@ export class RecommendationsService {
             },
           });
           if (count < 5) {
-            const palmResponse = await this.palmService.getRecommendation(title, type);
-            await this.jobTitleService.createRecommendations(jt.id, palmResponse.suggestions, type);
+            // const palmResponse = await this.palmService.getRecommendation(title, type);
+            const geminiResponse = await this.geminiService.getRecommendation(title, type);
+            await this.jobTitleService.createRecommendations(
+              jt.id,
+              geminiResponse.suggestions,
+              type,
+            );
           }
         }
         return this.jobTitleService.getRecommendations(title);
