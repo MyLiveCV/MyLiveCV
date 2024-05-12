@@ -84,7 +84,7 @@ services:
         condition: on-failure
 
   app:
-    image: amruthpillai/reactive-resume:latest
+    image: anu016/my-live-cv:latest
     networks:
       - reactive_resume_network
     environment:

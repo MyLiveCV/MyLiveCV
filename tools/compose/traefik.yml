@@ -59,7 +59,7 @@ services:
     command: redis-server --requirepass password
 
   app:
-    image: amruthpillai/reactive-resume:latest
+    image: anu016/my-live-cv:latest
     restart: unless-stopped
     depends_on:
       - postgres

@@ -19,7 +19,7 @@ export class ContributorsService {
 
   async fetchGitHubContributors() {
     const response = await this.httpService.axiosRef.get(
-      `https://api.github.com/repos/AmruthPillai/Reactive-Resume/contributors`,
+      `https://api.github.com/repos/MyLiveCV/MyLiveCV/contributors`,
     );
     const data = response.data as GitHubResponse;
 

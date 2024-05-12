@@ -1,7 +1,7 @@
 ![My Live CV](https://i.imgur.com/FFc4nyZ.jpg)
 
-![App Version](https://img.shields.io/github/package-json/version/AmruthPillai/Reactive-Resume?label=version)
-[![Docker Pulls](https://img.shields.io/docker/pulls/amruthpillai/reactive-resume)](https://hub.docker.com/repository/docker/amruthpillai/reactive-resume)
+![App Version](https://img.shields.io/github/package-json/version/MyLiveCV/MyLiveCV?label=version)
+[![Docker Pulls](https://img.shields.io/docker/pulls/anu016/my-live-cv)](https://hub.docker.com/repository/docker/anu016/my-live-cv)
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/AmruthPillai)](https://github.com/sponsors/AmruthPillai)
 [![Crowdin](https://badges.crowdin.net/reactive-resume/localized.svg)](https://crowdin.com/project/reactive-resume)
 [![Discord](https://img.shields.io/discord/1173518977851473940?label=discord&link=https%3A%2F%2Fdiscord.gg%2FhzwkZbyvUW)](https://discord.gg/hzwkZbyvUW)
@@ -79,11 +79,11 @@ Start creating your standout resume with My Live CV today!
 
 ## Star History
 
-<a href="https://star-history.com/#AmruthPillai/Reactive-Resume&Date">
+<a href="https://star-history.com/#MyLiveCV/MyLiveCV&Date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=AmruthPillai/Reactive-Resume&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=AmruthPillai/Reactive-Resume&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=AmruthPillai/Reactive-Resume&type=Date" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=MyLiveCV/MyLiveCV&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=MyLiveCV/MyLiveCV&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=MyLiveCV/MyLiveCV&type=Date" />
   </picture>
 </a>
 
