@@ -12,6 +12,7 @@ import {
   SectionRename,
   SectionVisibility,
 } from "./shared/section-options";
+import { Editor } from "@tiptap/react";
 
 export const SummarySection = () => {
   const setValue = useResumeStore((state) => state.setValue);
@@ -42,7 +43,7 @@ export const SummarySection = () => {
         <RichInput
           content={section.content}
           onChange={(value: string) => setValue("sections.summary.content", value)}
-          footer={(editor: string) => (
+          footer={(editor: Editor) => (
             <AiActions editor={editor} sectionName={ResumeSections.SUMMARY} />
           )}
         />

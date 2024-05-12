@@ -144,7 +144,13 @@ export class StorageService implements OnModuleInit {
       }
 
       await Promise.all([
-        this.client.putObject(this.bucketName, filepath, buffer, metadata),
+        this.client.putObject(
+          this.bucketName,
+          filepath,
+          buffer,
+          Buffer.byteLength(buffer),
+          metadata,
+        ),
         this.redis.set(`user:${userId}:storage:${type}:${filename}`, url),
       ]);
 
