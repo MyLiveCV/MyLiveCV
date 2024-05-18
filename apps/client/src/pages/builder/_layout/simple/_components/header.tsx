@@ -1,8 +1,8 @@
 import { t } from "@lingui/macro";
-import { Gear, HouseSimple, Lock, SidebarSimple } from "@phosphor-icons/react";
+import { HouseSimple, Lock, SidebarSimple } from "@phosphor-icons/react";
 import { Button, Tooltip } from "@reactive-resume/ui";
-import { cn, ResumeOptions, ResumeSections } from "@reactive-resume/utils";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { cn } from "@reactive-resume/utils";
+import { Link } from "react-router-dom";
 
 import { Icon } from "@/client/components/icon";
 import { LocaleSwitch } from "@/client/components/locale-switch";
@@ -12,19 +12,12 @@ import { UserOptions } from "@/client/components/user-options";
 import { useBuilderStore } from "@/client/stores/builder";
 import { useResumeStore } from "@/client/stores/resume";
 
+import { Settings } from "./settings";
+
 export const BuilderHeader = () => {
   const title = useResumeStore((state) => state.resume.title);
   const locked = useResumeStore((state) => state.resume.locked);
-  const activeSection = useBuilderStore((state) => state.activeSection.left);
-  const navigate = useNavigate();
-  const params = useParams<{ id: string; section: string }>();
-  const handleOptionClick = (sectionId: string) => {
-    navigate(`/builder/${params.id}/${sectionId}`);
-  };
 
-  const openOptions = () => {
-    handleOptionClick(activeSection.openOption ? ResumeSections.BASICS : ResumeOptions.TEMPLATE);
-  };
   const toggle = useBuilderStore((state) => state.toggle);
   const isDragging = useBuilderStore(
     (state) => state.panel.left.handle.isDragging || state.panel.right.handle.isDragging,
@@ -43,7 +36,7 @@ export const BuilderHeader = () => {
         <div className="flex">
           <Button asChild size="icon" variant="ghost" className="size-8 rounded-full">
             <Link to="/dashboard">
-              <Icon size={14} />
+              <Icon />
             </Link>
           </Button>
         </div>
@@ -70,9 +63,7 @@ export const BuilderHeader = () => {
         <div className="flex">
           <LocaleSwitch />
           <ThemeSwitch size={14} />
-          <Button size="icon" variant="ghost" className="flex" onClick={openOptions}>
-            <Gear />
-          </Button>
+          <Settings />
 
           <Button
             size="icon"

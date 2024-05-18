@@ -5,6 +5,8 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import { SectionIcon } from "@/client/pages/builder/_components/sections/shared/section-icon";
 
+import { Settings } from "../settings";
+
 export const SectionBar = () => {
   const navigate = useNavigate();
 
@@ -87,6 +89,8 @@ export const SectionBar = () => {
             handleSectionClick(ResumeSections.CUSTOM);
           }}
         />
+
+        <Settings />
       </div>
     </div>
   );

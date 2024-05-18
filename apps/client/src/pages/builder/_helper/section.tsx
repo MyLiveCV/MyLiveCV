@@ -17,7 +17,6 @@ import {
 } from "@reactive-resume/schema";
 import { Button, Separator } from "@reactive-resume/ui";
 import { ResumeOptions, ResumeSections } from "@reactive-resume/utils";
-import { Fragment } from "react";
 
 import { Copyright } from "@/client/components/copyright";
 import { BasicsSection } from "@/client/pages/builder/_components/sections/basics";
@@ -41,7 +40,8 @@ import { MetadataSectionIcon } from "../_components/shared/metadata-section-icon
 /**
  * Defines the Order of Sections and Steps and their Icons
  */
-export const SectionSteps: ResumeSections[] = [
+export type StepsType = ResumeSections | ResumeOptions;
+export const SectionSteps: StepsType[] = [
   ResumeSections.BASICS,
   ResumeSections.SUMMARY,
   ResumeSections.PROFILES,
@@ -91,7 +91,7 @@ const CustomSections = () => {
       <div className="ml-4">
         <Separator className="my-4" />
         {Object.values(customSections).map((section) => (
-          <Fragment key={section.id}>
+          <div key={section.id} className="my-6">
             {/* <Separator /> */}
 
             <SectionBase<CustomSection>
@@ -99,9 +99,8 @@ const CustomSections = () => {
               title={(item) => item.name}
               description={(item) => item.description}
             />
-          </Fragment>
+          </div>
         ))}
-        <Separator className="mb-4" />
       </div>
       <Button size="lg" variant="outline" onClick={addSection}>
         <PlusCircle />

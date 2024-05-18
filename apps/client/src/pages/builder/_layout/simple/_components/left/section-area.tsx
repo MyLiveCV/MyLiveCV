@@ -1,12 +1,11 @@
 import { t } from "@lingui/macro";
 import { SectionKey } from "@reactive-resume/schema";
 import { Button, ScrollArea } from "@reactive-resume/ui";
-import { ResumeSections } from "@reactive-resume/utils";
 import { useMemo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { getSectionIcon } from "@/client/pages/builder/_components/sections/shared/section-icon";
-import { SectionMapping, SectionSteps } from "@/client/pages/builder/_helper/section";
+import { SectionMapping, SectionSteps, StepsType } from "@/client/pages/builder/_helper/section";
 import { useBuilderStore } from "@/client/stores/builder";
 import { useTemporalResumeStore } from "@/client/stores/resume";
 
@@ -28,7 +27,7 @@ export const SectionArea = () => {
     navigate(`/builder/${params.id}`);
   };
 
-  const onStep = (section: ResumeSections) => {
+  const onStep = (section: StepsType) => {
     handleSectionClick(section);
     clearHistory();
   };

@@ -92,7 +92,7 @@ export const OptionContext = ({ resume, children }: Props) => {
         <ContextMenuItem onClick={onLockChange}>{lockIcon}</ContextMenuItem>
         <ContextMenuItem onClick={onVisibilityChange}>
           <ShareFat size={14} className="mr-2" />
-          {isPublicResume ? t`Restrict Sharing` : t`Allow Sharing`}
+          {isPublicResume ? t`Do not Share` : t`Share Publicly`}
         </ContextMenuItem>
         <ContextMenuSeparator />
         <ContextMenuItem onClick={onDelete} className="text-error">

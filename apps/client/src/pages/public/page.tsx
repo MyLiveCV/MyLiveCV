@@ -89,7 +89,7 @@ export const PublicResumePage = () => {
         <Link to="/">
           <Button size="sm" variant="ghost" className="space-x-1.5 text-xs font-normal">
             <span>{t`Built with`}</span>
-            <Icon size={12} />
+            <Icon />
             <span>{t`My Live CV`}</span>
           </Button>
         </Link>

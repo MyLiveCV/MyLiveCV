@@ -122,7 +122,7 @@ export const OptionMenu = ({ resume }: Props) => {
           }}
         >
           <ShareFat size={14} className="mr-2" />
-          {isPublicResume ? t`Restrict Sharing` : t`Allow Sharing`}
+          {isPublicResume ? t`Do not Share` : t`Share Publicly`}
         </DropdownMenuItem>
         <ContextMenuSeparator />
         <DropdownMenuItem

@@ -35,10 +35,10 @@ Please have a brief look over the environment variables and change them if neces
 ### 4. Fire up all the required services through Docker Compose
 
 ```sh
-docker compose -f tools/compose/development.yml --env-file .env -p reactive-resume up -d
+docker compose -f tools/compose/development.yml --env-file .env -p my-live-cv up -d
 ```
 
-It should take just under half a minute for all the services to be booted up correctly. You can check the status of all services by running `docker compose -p reactive-resume ps`
+It should take just under half a minute for all the services to be booted up correctly. You can check the status of all services by running `docker compose -p my-live-cv ps`
 
 ### 5. Run the development server
 

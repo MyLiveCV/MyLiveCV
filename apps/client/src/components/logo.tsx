@@ -13,10 +13,10 @@ export const Logo = ({ size = 32, className }: Props) => {
 
   switch (isDarkMode) {
     case false:
-      src = "/logo/light.svg";
+      src = "/logo/light/Logo.png";
       break;
     case true:
-      src = "/logo/dark.svg";
+      src = "/logo/dark/Logo.png";
       break;
   }
 

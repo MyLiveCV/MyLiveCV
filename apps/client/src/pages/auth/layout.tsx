@@ -1,11 +1,9 @@
 import { t } from "@lingui/macro";
 import { cn } from "@reactive-resume/utils";
 import { useMemo } from "react";
-import { Link, matchRoutes, Outlet, useLocation } from "react-router-dom";
+import { matchRoutes, Outlet, useLocation } from "react-router-dom";
 
-import { LocaleSwitch } from "@/client/components/locale-switch";
-import { Logo } from "@/client/components/logo";
-import { ThemeSwitch } from "@/client/components/theme-switch";
+import { Header } from "@/client/components/header";
 import { useAuthProviders } from "@/client/services/auth/providers";
 
 import { SocialAuth } from "./_components/social-auth";
@@ -24,18 +22,7 @@ export const AuthLayout = () => {
 
   return (
     <div className="relative">
-      <div className="flex items-center justify-between px-12">
-        <div>
-          <Link to="/" className="size-24">
-            <Logo className="-ml-3" size={96} />
-          </Link>
-        </div>
-
-        <div>
-          <LocaleSwitch />
-          <ThemeSwitch />
-        </div>
-      </div>
+      <Header />
       <div className="flex  w-screen lg:pt-12">
         <div className="relative flex w-full flex-col justify-center gap-y-8 px-12 sm:mx-auto sm:basis-[420px] sm:px-0 lg:basis-[640px] lg:px-12">
           <Outlet />
