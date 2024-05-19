@@ -6,17 +6,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: ru\n"
-"Project-Id-Version: reactive-resume\n"
+"Project-Id-Version: mylivecv\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-04-10 13:43\n"
+"PO-Revision-Date: 2024-05-19 06:32\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
-"X-Crowdin-Project: reactive-resume\n"
-"X-Crowdin-Project-ID: 503410\n"
+"X-Crowdin-Project: mylivecv\n"
+"X-Crowdin-Project-ID: 677118\n"
 "X-Crowdin-Language: ru\n"
-"X-Crowdin-File: messages.po\n"
-"X-Crowdin-File-ID: 494\n"
+"X-Crowdin-File: /master/messages.po\n"
+"X-Crowdin-File-ID: 8\n"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:169
 msgid "You have enabled two-factor authentication successfully."
@@ -99,7 +99,7 @@ msgstr "Пользователь с таким адресом эл. почты �
 
 #: apps/client/src/pages/builder/_components/sections/page.tsx:43
 msgid "A4"
-msgstr "A4"
+msgstr ""
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:270
@@ -580,9 +580,9 @@ msgstr "Ошибки"
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how My Live CV has helped you. Your feedback and support are always welcome and much appreciated!"
 msgstr "Даже если вы не вы не можете внести вклад в проект финансово, вы все равно можете помочь проекту, поставив звезду репозиторию на GitHub, рассказав друзьям или оставив короткое сообщение, чтобы я узнал, как именно My Live CV помог вам. Ваши отзывы и поддержка всегда приветствуются и очень ценятся!"
 
-#: apps/client/src/pages/home/sections/templates/index.tsx:12
-msgid "Explore the templates available in My Live CV and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
-msgstr "Изучите шаблоны, доступные в My Live CV, и просмотрите резюме, созданные с их помощью. Они также могут послужить примерами для создания вашего следующего резюме."
+#: apps/client/src/pages/home/sections/keywords/index.tsx:70
+msgid "Experience the pinnacle of professional resume creation with our feature-rich Resume Builder. From multimedia integration to real-time updates, unlock a suite of sophisticated tools. Elevate your digital presence and career prospects with unparalleled features. Explore now for a distinguished resume that commands attention and enhances your professional standing."
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:17
 msgid "Expert Writing Tips"
@@ -614,11 +614,7 @@ msgstr "Файл"
 msgid "Filetype"
 msgstr "Тип файла"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:40
-msgid "Finally,"
-msgstr "Наконец-то,"
-
-#: apps/client/src/components/ai-actions.tsx:90
+#: apps/client/src/components/ai-actions.tsx:120
 msgid "Fix Spelling & Grammar"
 msgstr "Исправить орфографию и грамматику"
 
@@ -663,9 +659,9 @@ msgstr "Формат"
 msgid "Found a bug, or have an idea for a new feature?"
 msgstr "Нашли ошибку или у вас есть идея для новой функции?"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:46
-msgid "Free, forever"
-msgstr "Бесплатно, навсегда"
+#: apps/client/src/pages/pricing/sections/cards/Product.tsx:168
+msgid "Free updates: <0>6 months</0>"
+msgstr ""
 
 #: apps/client/src/components/ai-actions.tsx:151
 #: apps/client/src/components/ai-actions.tsx:154
@@ -684,13 +680,17 @@ msgstr "Полное имя"
 msgid "Generate a random title for your resume"
 msgstr "Сгенерировать случайный заголовок для вашего резюме"
 
-#: apps/client/src/pages/home/sections/hero/call-to-action.tsx:33
-msgid "Get Started"
-msgstr "Начать"
+#: apps/client/src/pages/home/sections/features/index.tsx:23
+msgid "Get personalized recommendations for relevant achievements, quantifiable results, and action verbs to showcase your impact and drive."
+msgstr ""
+
+#: apps/client/src/pages/home/sections/features/index.tsx:18
+msgid "Get real-time feedback and suggestions for improvement, from grammar and formatting checks to ensuring your resume is clear, concise, and impactful."
+msgstr ""
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:18
 msgid "GitHub"
-msgstr "GitHub"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/statistics/index.tsx:12
 msgid "GitHub Stars"
@@ -707,7 +707,7 @@ msgstr "На главную"
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:31
 msgid "Google"
-msgstr "Google"
+msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/picture/options.tsx:207
 msgid "Grayscale"
@@ -784,10 +784,6 @@ msgstr "Мне всегда нравится получать отзывы и п
 #: apps/client/src/pages/builder/_components/dialogs/profiles.tsx:87
 msgid "Icon"
 msgstr "Иконка"
-
-#: apps/client/src/pages/home/sections/logo-cloud/index.tsx:47
-msgid "If this app has helped you with your job hunt, let me know by reaching out through <0>this contact form</0>."
-msgstr "Если это приложение помогло вам в поиске работы, дайте мне знать об этом через <0>эту контактную форму</0>."
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:126
 msgid "If you disable two-factor authentication, you will no longer be required to enter a verification code when logging in."
@@ -895,7 +891,7 @@ msgstr "ivan.ivanovich@example.com"
 
 #: apps/client/src/pages/builder/_components/sections/export.tsx:54
 msgid "JSON"
-msgstr "JSON"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:149
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
@@ -924,22 +920,14 @@ msgstr "Последнее обновление {lastUpdated}"
 msgid "Layout"
 msgstr "Макет"
 
-#: apps/client/src/pages/home/sections/hero/call-to-action.tsx:39
-msgid "Learn more"
-msgstr "Подробнее"
-
-#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:44
+#: apps/client/src/pages/builder/_components/sections/page.tsx:44
 msgid "Letter"
-msgstr "Letter"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:64
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:77
 msgid "Level"
 msgstr "Уровень"
-
-#: apps/client/src/components/copyright.tsx:16
-msgid "Licensed under <0>MIT</0>"
-msgstr "Под лицензией <0>MIT</0>"
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:81
 msgid "Light"
@@ -1067,9 +1055,9 @@ msgstr ""
 msgid "No results found"
 msgstr "Результатов не найдено"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:49
-msgid "No user tracking or advertising"
-msgstr "Никакого отслеживания или рекламы"
+#: apps/client/src/pages/pricing/sections/cards/Product.tsx:111
+msgid "No setup, or hidden fees"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:131
 msgid "Note: This will make your account less secure."
@@ -1098,10 +1086,6 @@ msgstr "Упс, сервер выдал ошибку."
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:174
 msgid "Open"
 msgstr "Открыть"
-
-#: apps/client/src/pages/home/sections/features/index.tsx:47
-msgid "Open Source"
-msgstr "Открытый исходный код"
 
 #: apps/client/src/services/openai/change-tone.ts:30
 #: apps/client/src/services/openai/fix-grammar.ts:28
@@ -1162,7 +1146,7 @@ msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/export.tsx:72
 msgid "PDF"
-msgstr "PDF"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/keywords/index.tsx:55
 msgid "Personal notes for each resume"
@@ -1210,11 +1194,7 @@ msgstr "Позиция"
 msgid "Position"
 msgstr "Позиция"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:97
-msgid "Powered by"
-msgstr "Разработан с помощью"
-
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:113
+#: apps/client/src/pages/builder/_components/dialogs/profiles.tsx:103
 msgid "Powered by <0>Simple Icons</0>"
 msgstr "Разработано с помощью <0>Simple Icons</0>"
 
@@ -1271,19 +1251,11 @@ msgstr "Поднять проблему"
 #: apps/client/src/pages/public/page.tsx:71
 #: apps/client/src/pages/public/page.tsx:93
 msgid "My Live CV"
-msgstr "My Live CV"
-
-#: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
-msgid "My Live CV has helped people land jobs at these great companies:"
-msgstr "My Live CV помогло людям устроиться на работу в эти замечательные компании:"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/support/index.tsx:12
 msgid "My Live CV is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to My Live CV through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
 msgstr "My Live CV - это бесплатный проект с открытым исходным кодом, созданный в основном мной, и ваша поддержка будет очень признательна. Если у вас есть желание внести свой вклад и вы можете себе это позволить, подумайте о том, чтобы сделать пожертвование через любую из перечисленных платформ. Кроме того, пожертвования на My Live CV через Open Collective не облагаются налогом, поскольку проект находится на финансовом обеспечении Open Collective Europe."
-
-#: apps/client/src/pages/home/sections/features/index.tsx:108
-msgid "My Live CV is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
-msgstr "My Live CV - это страстный проект, разрабатываемый уже более 3 лет, а вместе с тем имеющий значительное количество идей и функций, которые были доведены до (почти) совершенства."
 
 #: apps/client/src/pages/home/sections/contributors/index.tsx:22
 msgid "My Live CV thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
@@ -1352,11 +1324,7 @@ msgstr "Резюме"
 msgid "Resumes Generated"
 msgstr "Резюме создано"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:106
-msgid "Rich in features, not in pricing."
-msgstr "Богатый функционал, а не цена."
-
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:143
+#: apps/client/src/pages/builder/_components/sections/picture/options.tsx:143
 msgid "Rounded"
 msgstr "Скруглённая"
 
@@ -1400,9 +1368,9 @@ msgstr "Защита с помощью двухфакторной аутенти
 msgid "Security"
 msgstr "Безопасность"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:50
-msgid "Self-host with Docker"
-msgstr "Хостинг на Docker"
+#: apps/client/src/pages/home/sections/features/index.tsx:38
+msgid "See how many recruiters have viewed your Live Resume, how long they spent on each section, and what actions they took."
+msgstr ""
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:98
 msgid "Send Email"
@@ -1514,8 +1482,7 @@ msgid "Square"
 msgstr "Квадратная"
 
 #: apps/client/src/pages/pricing/sections/cards/Product.tsx:34
-msgid ""
-"Start building for free, then add a site plan to go live. Account plans unlock\n"
+msgid "Start building for free, then add a site plan to go live. Account plans unlock\n"
 "additional features."
 msgstr ""
 
@@ -1582,14 +1549,15 @@ msgstr "Поддержка формата страниц A4/Letter"
 msgid "System"
 msgstr "Системная"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:62
-#: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
+#: apps/client/src/pages/pricing/sections/cards/Product.tsx:128
+msgid "Team size: <0>1 developer</0>"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/sections/template.tsx:19
+#: apps/client/src/pages/builder/_layout/advance/_components/sidebars/right/index.tsx:62
+#: apps/client/src/pages/builder/_layout/simple/_components/left/options.tsx:32
 msgid "Template"
 msgstr "Шаблон"
-
-#: apps/client/src/pages/home/sections/templates/index.tsx:9
-msgid "Templates"
-msgstr "Шаблоны"
 
 #: apps/client/src/pages/home/sections/testimonials/index.tsx:68
 msgid "Testimonials"
@@ -1758,7 +1726,7 @@ msgstr "Загрузите файл из принятого источника, 
 
 #: apps/client/src/pages/builder/_components/sections/sharing.tsx:73
 msgid "URL"
-msgstr "URL"
+msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/shared/url-input.tsx:56
 msgid "URL must start with https://"
@@ -1808,11 +1776,7 @@ msgstr "Убедитесь, что двухфакторная аутентифи
 msgid "Verify your email address"
 msgstr "Подтвердите адрес эл. почты"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:26
-msgid "Version 4"
-msgstr "Версия 4"
-
-#: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:51
+#: apps/client/src/pages/builder/_components/sections/statistics.tsx:51
 msgid "Views"
 msgstr "Просмотры"
 
@@ -1839,9 +1803,9 @@ msgstr "Мы подтверждаем ваш адрес эл. почты, тол
 msgid "Website"
 msgstr "Сайт"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:34
-msgid "What's new in the latest version"
-msgstr "Что нового в последней версии"
+#: apps/client/src/pages/home/sections/faq/index.tsx:44
+msgid "What are the benefits of using your website to build a live resume?"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:154
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
