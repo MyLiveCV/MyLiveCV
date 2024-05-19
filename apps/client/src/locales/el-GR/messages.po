@@ -6,17 +6,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: el\n"
-"Project-Id-Version: reactive-resume\n"
+"Project-Id-Version: mylivecv\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-04-10 13:42\n"
+"PO-Revision-Date: 2024-05-19 06:32\n"
 "Last-Translator: \n"
 "Language-Team: Greek\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: reactive-resume\n"
-"X-Crowdin-Project-ID: 503410\n"
+"X-Crowdin-Project: mylivecv\n"
+"X-Crowdin-Project-ID: 677118\n"
 "X-Crowdin-Language: el\n"
-"X-Crowdin-File: messages.po\n"
-"X-Crowdin-File-ID: 494\n"
+"X-Crowdin-File: /master/messages.po\n"
+"X-Crowdin-File-ID: 8\n"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:169
 msgid "You have enabled two-factor authentication successfully."
@@ -59,8 +59,8 @@ msgid "<0>The community has spent a lot of time writing the documentation for My
 msgstr "<0>Η κοινότητα έχει αφιερώσει πολύ χρόνο στη συγγραφή της τεκμηρίωσης για το My Live CV και είμαι σίγουρος ότι θα σας βοηθήσει να ξεκινήσετε με την εφαρμογή.</0><1>Υπάρχουν επίσης πολλά παραδείγματα που θα σας βοηθήσουν να ξεκινήσετε, καθώς και χαρακτηριστικά που ίσως δεν γνωρίζετε και τα οποία θα μπορούσαν να σας βοηθήσουν να φτιάξετε το τέλειο βιογραφικό σας.</1>"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:146
-msgid "<0>Two-factor authentication is currently disabled.</0> You can enable it by adding an authenticator app to your account."
-msgstr "<0>Ο έλεγχος ταυτότητας δύο παραγόντων είναι επί του παρόντος απενεργοποιημένος.</0> Μπορείτε να τον ενεργοποιήσετε προσθέτοντας μια εφαρμογή ελέγχου ταυτότητας στο λογαριασμό σας."
+msgid "<0>Two-factoer authentication is currently disabled.</0> You can enable it by adding an authenticator app to your account."
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:139
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
@@ -75,19 +75,15 @@ msgstr ""
 msgid "A free and open-source resume builder"
 msgstr "Ένας δωρεάν και ανοικτού κώδικα κατασκευαστής βιογραφικών σημειωμάτων"
 
-#: apps/client/src/pages/home/components/footer.tsx:20
-#: apps/client/src/pages/home/sections/hero/index.tsx:47
-msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
-msgstr "Ένας δωρεάν κατασκευαστής βιογραφικών σημειωμάτων ανοικτού κώδικα που απλοποιεί τη διαδικασία δημιουργίας, ενημέρωσης και κοινοποίησης του βιογραφικού σας σημειώματος."
-
-#: apps/client/src/pages/builder/_components/toolbar.tsx:53
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
+#: apps/client/src/pages/builder/_components/sections/sharing.tsx:29
+#: apps/client/src/pages/builder/_layout/advance/_components/toolbar.tsx:56
+#: apps/client/src/pages/builder/_layout/simple/_components/toolbar.tsx:56
 msgid "A link has been copied to your clipboard."
 msgstr "Ο σύνδεσμος έχει αντιγραφεί στο πρόχειρο."
 
-#: apps/client/src/components/copyright.tsx:29
-msgid "A passion project by <0>Amruth Pillai</0>"
-msgstr "Ένα έργο πάθους από τον <0>Amruth Pillai</0>"
+#: apps/client/src/pages/home/sections/faq/index.tsx:12
+msgid "A live resume is an interactive online document that goes beyond static text. It allows you to embed multimedia content, update achievements in real-time, and engage with recruiters in a dynamic way."
+msgstr ""
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:57
 msgid "A password reset link should have been sent to your inbox, if an account existed with the email you provided."
@@ -584,9 +580,9 @@ msgstr "Σφάλματα"
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how My Live CV has helped you. Your feedback and support are always welcome and much appreciated!"
 msgstr "Ακόμη και αν δεν είστε σε θέση να συνεισφέρετε οικονομικά, μπορείτε να κάνετε τη διαφορά δίνοντας ένα αστέρι στο αποθετήριο GitHub, διαδίδοντας το μήνυμα στους φίλους σας ή στέλνοντας ένα γρήγορο μήνυμα για να μου πείτε πώς σας βοήθησε το My Live CV. Τα σχόλιά σας και η υποστήριξή σας είναι πάντα ευπρόσδεκτα και εκτιμώνται πολύ!"
 
-#: apps/client/src/pages/home/sections/templates/index.tsx:12
-msgid "Explore the templates available in My Live CV and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
-msgstr "Εξερευνήστε τα πρότυπα που είναι διαθέσιμα στο My Live CV και δείτε τα βιογραφικά που έχουν δημιουργηθεί με αυτά. Θα μπορούσαν επίσης να χρησιμεύσουν ως παραδείγματα που θα σας βοηθήσουν να καθοδηγήσετε τη δημιουργία του επόμενου βιογραφικού σας."
+#: apps/client/src/pages/home/sections/keywords/index.tsx:70
+msgid "Experience the pinnacle of professional resume creation with our feature-rich Resume Builder. From multimedia integration to real-time updates, unlock a suite of sophisticated tools. Elevate your digital presence and career prospects with unparalleled features. Explore now for a distinguished resume that commands attention and enhances your professional standing."
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:17
 msgid "Expert Writing Tips"
@@ -618,11 +614,7 @@ msgstr "Αρχείο"
 msgid "Filetype"
 msgstr "Τύπος αρχείου"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:40
-msgid "Finally,"
-msgstr "Τέλος,"
-
-#: apps/client/src/components/ai-actions.tsx:90
+#: apps/client/src/components/ai-actions.tsx:120
 msgid "Fix Spelling & Grammar"
 msgstr "Ορθογραφία & γραμματική"
 
@@ -667,9 +659,9 @@ msgstr "Μορφή"
 msgid "Found a bug, or have an idea for a new feature?"
 msgstr "Βρήκατε ένα σφάλμα ή έχετε μια ιδέα για μια νέα λειτουργία;"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:46
-msgid "Free, forever"
-msgstr "Δωρεάν Για Πάντα"
+#: apps/client/src/pages/pricing/sections/cards/Product.tsx:168
+msgid "Free updates: <0>6 months</0>"
+msgstr ""
 
 #: apps/client/src/components/ai-actions.tsx:151
 #: apps/client/src/components/ai-actions.tsx:154
@@ -688,17 +680,21 @@ msgstr "Ονοματεπώνυμο"
 msgid "Generate a random title for your resume"
 msgstr "Δημιουργήστε έναν τυχαίο τίτλο για το βιογραφικό σας"
 
-#: apps/client/src/pages/home/sections/hero/call-to-action.tsx:33
-msgid "Get Started"
-msgstr "Ξεκινήστε"
+#: apps/client/src/pages/home/sections/features/index.tsx:23
+msgid "Get personalized recommendations for relevant achievements, quantifiable results, and action verbs to showcase your impact and drive."
+msgstr ""
+
+#: apps/client/src/pages/home/sections/features/index.tsx:18
+msgid "Get real-time feedback and suggestions for improvement, from grammar and formatting checks to ensuring your resume is clear, concise, and impactful."
+msgstr ""
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:18
 msgid "GitHub"
-msgstr "GitHub"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/statistics/index.tsx:12
 msgid "GitHub Stars"
-msgstr "GitHub Stars"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:208
 msgid "Give your old resume a new name."
@@ -711,7 +707,7 @@ msgstr "Μετάβαση στον πίνακα εργαλείων (dashboard)"
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:31
 msgid "Google"
-msgstr "Google"
+msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/picture/options.tsx:207
 msgid "Grayscale"
@@ -1021,10 +1017,6 @@ msgstr "Μάρτιος 2023 - Παρόν"
 msgid "Margin"
 msgstr "Περιθώρια"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:48
-msgid "MIT License"
-msgstr "MIT License"
-
 #: apps/client/src/pages/auth/register/page.tsx:106
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:57
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:48
@@ -1063,9 +1055,9 @@ msgstr ""
 msgid "No results found"
 msgstr "Δεν βρέθηκαν αποτελέσματα"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:49
-msgid "No user tracking or advertising"
-msgstr "Καμία παρακολούθηση χρήστη ή διαφήμιση"
+#: apps/client/src/pages/pricing/sections/cards/Product.tsx:111
+msgid "No setup, or hidden fees"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:131
 msgid "Note: This will make your account less secure."
@@ -1094,10 +1086,6 @@ msgstr "Ουπς, ο διακομιστής επέστρεψε σφάλμα."
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:174
 msgid "Open"
 msgstr "Άνοιγμα"
-
-#: apps/client/src/pages/home/sections/features/index.tsx:47
-msgid "Open Source"
-msgstr "Ανοικτού Κώδικα"
 
 #: apps/client/src/services/openai/change-tone.ts:30
 #: apps/client/src/services/openai/fix-grammar.ts:28
@@ -1158,7 +1146,7 @@ msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/export.tsx:72
 msgid "PDF"
-msgstr "PDF"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/keywords/index.tsx:55
 msgid "Personal notes for each resume"
@@ -1206,13 +1194,9 @@ msgstr "Θέση"
 msgid "Position"
 msgstr "Θέση"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:97
-msgid "Powered by"
-msgstr "Υποστηρίζεται από"
-
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:113
+#: apps/client/src/pages/builder/_components/dialogs/profiles.tsx:103
 msgid "Powered by <0>Simple Icons</0>"
-msgstr "Powered by <0>Simple Icons</0>"
+msgstr ""
 
 #: apps/client/src/pages/pricing/sections/cards/Product.tsx:148
 msgid "Premium support: <0>6 months</0>"
@@ -1267,19 +1251,11 @@ msgstr "Θέστε ένα θέμα"
 #: apps/client/src/pages/public/page.tsx:71
 #: apps/client/src/pages/public/page.tsx:93
 msgid "My Live CV"
-msgstr "My Live CV"
-
-#: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
-msgid "My Live CV has helped people land jobs at these great companies:"
-msgstr "Η My Live CV έχει βοηθήσει ανθρώπους να βρουν δουλειά σε αυτές τις σπουδαίες εταιρείες:"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/support/index.tsx:12
 msgid "My Live CV is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to My Live CV through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
 msgstr "Το My Live CV είναι ένα ελεύθερο και ανοικτού κώδικα έργο που δημιουργήθηκε κυρίως από εμένα, και η υποστήριξή σας θα εκτιμηθεί ιδιαίτερα. Αν έχετε τη διάθεση να συνεισφέρετε, και μόνο αν μπορείτε να το αντέξετε οικονομικά, σκεφτείτε να κάνετε μια δωρεά μέσω οποιασδήποτε από τις πλατφόρμες που αναφέρονται. Επιπλέον, οι δωρεές στο My Live CV μέσω του Open Collective απαλλάσσονται από φόρους, καθώς το έργο φιλοξενείται φορολογικά από το Open Collective Europe."
-
-#: apps/client/src/pages/home/sections/features/index.tsx:108
-msgid "My Live CV is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
-msgstr "Το My Live CV είναι ένα έργο πάθους πάνω από 3 χρόνια σκληρής δουλειάς, και μαζί με αυτό έρχεται ένας αριθμός επαναλαμβανόμενων ιδεών και χαρακτηριστικών που έχουν κατασκευαστεί στην (σχεδόν) τελειότητα."
 
 #: apps/client/src/pages/home/sections/contributors/index.tsx:22
 msgid "My Live CV thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
@@ -1348,11 +1324,7 @@ msgstr "Βιογραφικά σημειώματα"
 msgid "Resumes Generated"
 msgstr "Παραγόμενα βιογραφικά σημειώματα"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:106
-msgid "Rich in features, not in pricing."
-msgstr "Πλούσιο σε χαρακτηριστικά, όχι σε τιμές."
-
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:143
+#: apps/client/src/pages/builder/_components/sections/picture/options.tsx:143
 msgid "Rounded"
 msgstr "Στρογγυλεμένο"
 
@@ -1396,9 +1368,9 @@ msgstr "Ασφάλεια με έλεγχο ταυτότητας δύο παρα�
 msgid "Security"
 msgstr "Ασφάλεια"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:50
-msgid "Self-host with Docker"
-msgstr "Self-host με Docker"
+#: apps/client/src/pages/home/sections/features/index.tsx:38
+msgid "See how many recruiters have viewed your Live Resume, how long they spent on each section, and what actions they took."
+msgstr ""
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:98
 msgid "Send Email"
@@ -1486,7 +1458,7 @@ msgstr "Μέγεθος (σε px)"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:249
 msgid "Slug"
-msgstr "Slug"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:22
 msgid "Smart Content Suggestions"
@@ -1510,8 +1482,7 @@ msgid "Square"
 msgstr "Τετράγωνο"
 
 #: apps/client/src/pages/pricing/sections/cards/Product.tsx:34
-msgid ""
-"Start building for free, then add a site plan to go live. Account plans unlock\n"
+msgid "Start building for free, then add a site plan to go live. Account plans unlock\n"
 "additional features."
 msgstr ""
 
@@ -1578,14 +1549,15 @@ msgstr "Υποστηρίζει μορφές σελίδων A4/Letter"
 msgid "System"
 msgstr "Σύστημα"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:62
-#: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
+#: apps/client/src/pages/pricing/sections/cards/Product.tsx:128
+msgid "Team size: <0>1 developer</0>"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/sections/template.tsx:19
+#: apps/client/src/pages/builder/_layout/advance/_components/sidebars/right/index.tsx:62
+#: apps/client/src/pages/builder/_layout/simple/_components/left/options.tsx:32
 msgid "Template"
 msgstr "Πρότυπο"
-
-#: apps/client/src/pages/home/sections/templates/index.tsx:9
-msgid "Templates"
-msgstr "Πρότυπα"
 
 #: apps/client/src/pages/home/sections/testimonials/index.tsx:68
 msgid "Testimonials"
@@ -1754,7 +1726,7 @@ msgstr "Ανεβάστε ένα αρχείο από μία από τις απο�
 
 #: apps/client/src/pages/builder/_components/sections/sharing.tsx:73
 msgid "URL"
-msgstr "URL"
+msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/shared/url-input.tsx:56
 msgid "URL must start with https://"
@@ -1900,3 +1872,4 @@ msgstr ""
 #: apps/client/src/pages/builder/_layout/simple/_components/toolbar.tsx:105
 msgid "Zoom Out"
 msgstr ""
+
