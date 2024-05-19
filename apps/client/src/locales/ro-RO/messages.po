@@ -6,17 +6,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: ro\n"
-"Project-Id-Version: reactive-resume\n"
+"Project-Id-Version: mylivecv\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-04-10 13:43\n"
+"PO-Revision-Date: 2024-05-19 06:32\n"
 "Last-Translator: \n"
 "Language-Team: Romanian\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);\n"
-"X-Crowdin-Project: reactive-resume\n"
-"X-Crowdin-Project-ID: 503410\n"
+"X-Crowdin-Project: mylivecv\n"
+"X-Crowdin-Project-ID: 677118\n"
 "X-Crowdin-Language: ro\n"
-"X-Crowdin-File: messages.po\n"
-"X-Crowdin-File-ID: 494\n"
+"X-Crowdin-File: /master/messages.po\n"
+"X-Crowdin-File-ID: 8\n"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:169
 msgid "You have enabled two-factor authentication successfully."
@@ -653,7 +653,7 @@ msgstr "V-ați uitat parola?"
 #: apps/client/src/pages/builder/_components/sections/page.tsx:32
 #: apps/client/src/pages/builder/_components/sections/page.tsx:40
 msgid "Format"
-msgstr "Format"
+msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/information.tsx:49
 msgid "Found a bug, or have an idea for a new feature?"
@@ -690,7 +690,7 @@ msgstr ""
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:18
 msgid "GitHub"
-msgstr "GitHub"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/statistics/index.tsx:12
 msgid "GitHub Stars"
@@ -707,7 +707,7 @@ msgstr ""
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:31
 msgid "Google"
-msgstr "Google"
+msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/picture/options.tsx:207
 msgid "Grayscale"
@@ -795,7 +795,7 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:309
 msgid "Import"
-msgstr "Import"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:208
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:24
@@ -878,18 +878,16 @@ msgstr ""
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
 msgid "John Doe"
 msgstr ""
-"John Doe\n"
-""
 
 #: apps/client/src/pages/auth/register/page.tsx:130
 msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
 msgid "john.doe"
-msgstr "john.doe"
+msgstr ""
 
 #: apps/client/src/pages/auth/register/page.tsx:151
 msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
 msgid "john.doe@example.com"
-msgstr "john.doe@example.com"
+msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/export.tsx:54
 msgid "JSON"
@@ -1148,7 +1146,7 @@ msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/export.tsx:72
 msgid "PDF"
-msgstr "PDF"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/keywords/index.tsx:55
 msgid "Personal notes for each resume"
@@ -1227,7 +1225,7 @@ msgstr "Profil"
 
 #: apps/client/src/pages/builder/_components/sections/sharing.tsx:55
 msgid "Public"
-msgstr "Public"
+msgstr ""
 
 #: apps/client/src/pages/builder/_components/dialogs/publications.tsx:58
 msgid "Publisher"
@@ -1484,8 +1482,7 @@ msgid "Square"
 msgstr "Pătrat"
 
 #: apps/client/src/pages/pricing/sections/cards/Product.tsx:34
-msgid ""
-"Start building for free, then add a site plan to go live. Account plans unlock\n"
+msgid "Start building for free, then add a site plan to go live. Account plans unlock\n"
 "additional features."
 msgstr ""
 
@@ -1729,7 +1726,7 @@ msgstr "Încărcați un fișier dintr-una dintre sursele acceptate pentru a anal
 
 #: apps/client/src/pages/builder/_components/sections/sharing.tsx:73
 msgid "URL"
-msgstr "URL"
+msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/shared/url-input.tsx:56
 msgid "URL must start with https://"
@@ -1804,7 +1801,7 @@ msgstr "Vă verificăm adresa de e-mail numai pentru a ne asigura că vă putem 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:95
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:63
 msgid "Website"
-msgstr "Website"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/faq/index.tsx:44
 msgid "What are the benefits of using your website to build a live resume?"
@@ -1875,3 +1872,4 @@ msgstr ""
 #: apps/client/src/pages/builder/_layout/simple/_components/toolbar.tsx:105
 msgid "Zoom Out"
 msgstr ""
+

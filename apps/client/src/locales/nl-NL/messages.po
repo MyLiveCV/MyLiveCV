@@ -6,17 +6,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: nl\n"
-"Project-Id-Version: reactive-resume\n"
+"Project-Id-Version: mylivecv\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-04-10 13:42\n"
+"PO-Revision-Date: 2024-05-19 06:32\n"
 "Last-Translator: \n"
 "Language-Team: Dutch\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: reactive-resume\n"
-"X-Crowdin-Project-ID: 503410\n"
+"X-Crowdin-Project: mylivecv\n"
+"X-Crowdin-Project-ID: 677118\n"
 "X-Crowdin-Language: nl\n"
-"X-Crowdin-File: messages.po\n"
-"X-Crowdin-File-ID: 494\n"
+"X-Crowdin-File: /master/messages.po\n"
+"X-Crowdin-File-ID: 8\n"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:169
 msgid "You have enabled two-factor authentication successfully."
@@ -99,7 +99,7 @@ msgstr "Er bestaat al een gebruiker met dit e-mailadres en/of deze gebruikersnaa
 
 #: apps/client/src/pages/builder/_components/sections/page.tsx:43
 msgid "A4"
-msgstr "A4"
+msgstr ""
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:270
@@ -108,7 +108,7 @@ msgstr "Accepteert alleen {accept} bestanden"
 
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:104
 msgid "Account"
-msgstr "Account"
+msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/custom/section.tsx:124
 msgid "Add a custom field"
@@ -136,7 +136,7 @@ msgstr "Eigen Pagina toevoegen"
 
 #: apps/client/src/components/ai-actions.tsx:91
 msgid "AI"
-msgstr "AI"
+msgstr ""
 
 #: apps/client/src/services/palm/suggestions.ts:74
 msgid "AI did not return a valid JSON."
@@ -320,7 +320,7 @@ msgstr "Sluiten"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:199
 msgid "Code"
-msgstr "Code"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:50
 msgid "Code must be exactly 6 digits long."
@@ -501,11 +501,11 @@ msgstr "Download een PDF van uw CV. Dit bestand kan worden gebruikt om uw CV af 
 #: apps/client/src/pages/builder/_layout/simple/_components/toolbar.tsx:163
 #: apps/client/src/pages/public/page.tsx:103
 msgid "Download PDF"
-msgstr "Download PDF"
+msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/statistics.tsx:58
 msgid "Downloads"
-msgstr "Downloads"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:170
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
@@ -690,7 +690,7 @@ msgstr ""
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:18
 msgid "GitHub"
-msgstr "GitHub"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/statistics/index.tsx:12
 msgid "GitHub Stars"
@@ -707,7 +707,7 @@ msgstr "Ga naar het Dashboard"
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:31
 msgid "Google"
-msgstr "Google"
+msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/picture/options.tsx:207
 msgid "Grayscale"
@@ -891,7 +891,7 @@ msgstr "jan.janssen@example.com"
 
 #: apps/client/src/pages/builder/_components/sections/export.tsx:54
 msgid "JSON"
-msgstr "JSON"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:149
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
@@ -903,7 +903,7 @@ msgstr "Sleutelwoorden"
 #: apps/client/src/pages/builder/_components/sections/shared/url-input.tsx:39
 #: apps/client/src/pages/builder/_components/sections/shared/url-input.tsx:49
 msgid "Label"
-msgstr "Label"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:95
 msgid "Language"
@@ -918,7 +918,7 @@ msgstr "Laatst bijgewerkt {lastUpdated}"
 #: apps/client/src/pages/builder/_layout/advance/_components/sidebars/right/index.tsx:67
 #: apps/client/src/pages/builder/_layout/simple/_components/left/options.tsx:37
 msgid "Layout"
-msgstr "Layout"
+msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/page.tsx:44
 msgid "Letter"
@@ -1085,7 +1085,7 @@ msgstr "Oeps, de server gaf een fout."
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:84
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:174
 msgid "Open"
-msgstr "Open"
+msgstr ""
 
 #: apps/client/src/services/openai/change-tone.ts:30
 #: apps/client/src/services/openai/fix-grammar.ts:28
@@ -1146,7 +1146,7 @@ msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/export.tsx:72
 msgid "PDF"
-msgstr "PDF"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/keywords/index.tsx:55
 msgid "Personal notes for each resume"
@@ -1251,7 +1251,7 @@ msgstr "Probleem aankaarten"
 #: apps/client/src/pages/public/page.tsx:71
 #: apps/client/src/pages/public/page.tsx:93
 msgid "My Live CV"
-msgstr "My Live CV"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/support/index.tsx:12
 msgid "My Live CV is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to My Live CV through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
@@ -1482,8 +1482,7 @@ msgid "Square"
 msgstr "Vierkant"
 
 #: apps/client/src/pages/pricing/sections/cards/Product.tsx:34
-msgid ""
-"Start building for free, then add a site plan to go live. Account plans unlock\n"
+msgid "Start building for free, then add a site plan to go live. Account plans unlock\n"
 "additional features."
 msgstr ""
 
@@ -1727,7 +1726,7 @@ msgstr "Upload een bestand van één van de geaccepteerde bronnen om bestaande g
 
 #: apps/client/src/pages/builder/_components/sections/sharing.tsx:73
 msgid "URL"
-msgstr "URL"
+msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/shared/url-input.tsx:56
 msgid "URL must start with https://"
@@ -1802,7 +1801,7 @@ msgstr "Wij verifiëren uw e-mailadres enkel om ervoor te zorgen dat wij u een l
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:95
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:63
 msgid "Website"
-msgstr "Website"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/faq/index.tsx:44
 msgid "What are the benefits of using your website to build a live resume?"
@@ -1873,3 +1872,4 @@ msgstr "Inzoomen"
 #: apps/client/src/pages/builder/_layout/simple/_components/toolbar.tsx:105
 msgid "Zoom Out"
 msgstr "Uitzoomen"
+
