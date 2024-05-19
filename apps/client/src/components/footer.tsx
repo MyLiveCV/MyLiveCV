@@ -24,22 +24,7 @@ export const Footer = () => (
       </div>
 
       <div className="relative col-start-4 flex flex-col items-end justify-end">
-        <div className="mb-14">
-          <a href="https://www.digitalocean.com/?utm_medium=opensource&utm_source=Reactive-Resume">
-            <img
-              src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/PoweredByDO/DO_Powered_by_Badge_black.svg"
-              alt="Powered by DigitalOcean"
-              className="block dark:hidden"
-              width="150px"
-            />
-            <img
-              src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/PoweredByDO/DO_Powered_by_Badge_white.svg"
-              alt="Powered by DigitalOcean"
-              className="hidden dark:block"
-              width="150px"
-            />
-          </a>
-        </div>
+        <div className="mb-14"></div>
 
         <div className="absolute bottom-0 right-0 lg:space-x-2">
           <LocaleSwitch />
