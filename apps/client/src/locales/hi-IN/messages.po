@@ -6,17 +6,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: hi\n"
-"Project-Id-Version: reactive-resume\n"
+"Project-Id-Version: mylivecv\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-04-10 13:42\n"
+"PO-Revision-Date: 2024-05-19 06:32\n"
 "Last-Translator: \n"
 "Language-Team: Hindi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: reactive-resume\n"
-"X-Crowdin-Project-ID: 503410\n"
+"X-Crowdin-Project: mylivecv\n"
+"X-Crowdin-Project-ID: 677118\n"
 "X-Crowdin-Language: hi\n"
-"X-Crowdin-File: messages.po\n"
-"X-Crowdin-File-ID: 494\n"
+"X-Crowdin-File: /master/messages.po\n"
+"X-Crowdin-File-ID: 8\n"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:169
 msgid "You have enabled two-factor authentication successfully."
@@ -136,7 +136,7 @@ msgstr "नया पेज जोड़ें"
 
 #: apps/client/src/components/ai-actions.tsx:91
 msgid "AI"
-msgstr "AI"
+msgstr ""
 
 #: apps/client/src/services/palm/suggestions.ts:74
 msgid "AI did not return a valid JSON."
@@ -887,7 +887,7 @@ msgstr "जॉन डो"
 #: apps/client/src/pages/auth/register/page.tsx:151
 msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
 msgid "john.doe@example.com"
-msgstr "john.doe@example.com"
+msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/export.tsx:54
 msgid "JSON"
@@ -1482,8 +1482,7 @@ msgid "Square"
 msgstr "वर्ग"
 
 #: apps/client/src/pages/pricing/sections/cards/Product.tsx:34
-msgid ""
-"Start building for free, then add a site plan to go live. Account plans unlock\n"
+msgid "Start building for free, then add a site plan to go live. Account plans unlock\n"
 "additional features."
 msgstr ""
 
@@ -1873,3 +1872,4 @@ msgstr "ज़ूम इन"
 #: apps/client/src/pages/builder/_layout/simple/_components/toolbar.tsx:105
 msgid "Zoom Out"
 msgstr "ज़ूम आउट"
+
