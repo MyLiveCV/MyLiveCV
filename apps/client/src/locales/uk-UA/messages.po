@@ -6,17 +6,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: uk\n"
-"Project-Id-Version: reactive-resume\n"
+"Project-Id-Version: mylivecv\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-04-10 13:43\n"
+"PO-Revision-Date: 2024-05-19 06:32\n"
 "Last-Translator: \n"
 "Language-Team: Ukrainian\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
-"X-Crowdin-Project: reactive-resume\n"
-"X-Crowdin-Project-ID: 503410\n"
+"X-Crowdin-Project: mylivecv\n"
+"X-Crowdin-Project-ID: 677118\n"
 "X-Crowdin-Language: uk\n"
-"X-Crowdin-File: messages.po\n"
-"X-Crowdin-File-ID: 494\n"
+"X-Crowdin-File: /master/messages.po\n"
+"X-Crowdin-File-ID: 8\n"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:169
 msgid "You have enabled two-factor authentication successfully."
@@ -99,7 +99,7 @@ msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/page.tsx:43
 msgid "A4"
-msgstr "A4"
+msgstr ""
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:270
@@ -614,11 +614,7 @@ msgstr ""
 msgid "Filetype"
 msgstr ""
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:40
-msgid "Finally,"
-msgstr "Нарешті,"
-
-#: apps/client/src/components/ai-actions.tsx:90
+#: apps/client/src/components/ai-actions.tsx:120
 msgid "Fix Spelling & Grammar"
 msgstr ""
 
@@ -1486,8 +1482,7 @@ msgid "Square"
 msgstr ""
 
 #: apps/client/src/pages/pricing/sections/cards/Product.tsx:34
-msgid ""
-"Start building for free, then add a site plan to go live. Account plans unlock\n"
+msgid "Start building for free, then add a site plan to go live. Account plans unlock\n"
 "additional features."
 msgstr ""
 
@@ -1781,11 +1776,7 @@ msgstr ""
 msgid "Verify your email address"
 msgstr ""
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:26
-msgid "Version 4"
-msgstr "Версія 4"
-
-#: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:51
+#: apps/client/src/pages/builder/_components/sections/statistics.tsx:51
 msgid "Views"
 msgstr "Перегляди"
 
@@ -1812,9 +1803,9 @@ msgstr ""
 msgid "Website"
 msgstr "Вебсторінка"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:34
-msgid "What's new in the latest version"
-msgstr "Що нового в останній версії"
+#: apps/client/src/pages/home/sections/faq/index.tsx:44
+msgid "What are the benefits of using your website to build a live resume?"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:154
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
