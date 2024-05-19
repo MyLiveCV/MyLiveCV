@@ -6,17 +6,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: es\n"
-"Project-Id-Version: reactive-resume\n"
+"Project-Id-Version: mylivecv\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-04-10 13:43\n"
+"PO-Revision-Date: 2024-05-19 06:32\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: reactive-resume\n"
-"X-Crowdin-Project-ID: 503410\n"
+"X-Crowdin-Project: mylivecv\n"
+"X-Crowdin-Project-ID: 677118\n"
 "X-Crowdin-Language: es-ES\n"
-"X-Crowdin-File: messages.po\n"
-"X-Crowdin-File-ID: 494\n"
+"X-Crowdin-File: /master/messages.po\n"
+"X-Crowdin-File-ID: 8\n"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:169
 msgid "You have enabled two-factor authentication successfully."
@@ -99,7 +99,7 @@ msgstr "Ya existe un usuario con esta dirección de correo electrónico y/o nomb
 
 #: apps/client/src/pages/builder/_components/sections/page.tsx:43
 msgid "A4"
-msgstr "A4"
+msgstr ""
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:270
@@ -690,7 +690,7 @@ msgstr ""
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:18
 msgid "GitHub"
-msgstr "GitHub"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/statistics/index.tsx:12
 msgid "GitHub Stars"
@@ -707,7 +707,7 @@ msgstr "Ir al Tablero"
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:31
 msgid "Google"
-msgstr "Google"
+msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/picture/options.tsx:207
 msgid "Grayscale"
@@ -755,7 +755,7 @@ msgstr "Mantén <0>Ctrl</0> para mostrar tu contraseña temporalmente."
 
 #: apps/client/src/pages/builder/_components/sections/picture/options.tsx:100
 msgid "Horizontal"
-msgstr "Horizontal"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/keywords/index.tsx:59
 msgid "Host your resume publicly"
@@ -891,7 +891,7 @@ msgstr "juan.nadie@ejemplo.es"
 
 #: apps/client/src/pages/builder/_components/sections/export.tsx:54
 msgid "JSON"
-msgstr "JSON"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:149
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
@@ -1146,7 +1146,7 @@ msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/export.tsx:72
 msgid "PDF"
-msgstr "PDF"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/keywords/index.tsx:55
 msgid "Personal notes for each resume"
@@ -1194,11 +1194,7 @@ msgstr "Posición"
 msgid "Position"
 msgstr "Posición"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:97
-msgid "Powered by"
-msgstr "Impulsado por"
-
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:113
+#: apps/client/src/pages/builder/_components/dialogs/profiles.tsx:103
 msgid "Powered by <0>Simple Icons</0>"
 msgstr "Impulsado por <0>Simple Icons</0>"
 
@@ -1255,19 +1251,11 @@ msgstr "Reportar problema"
 #: apps/client/src/pages/public/page.tsx:71
 #: apps/client/src/pages/public/page.tsx:93
 msgid "My Live CV"
-msgstr "My Live CV"
-
-#: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
-msgid "My Live CV has helped people land jobs at these great companies:"
-msgstr "My Live CV ha ayudado a personas a conseguir puestos de trabajo en estas grandes compañías:"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/support/index.tsx:12
 msgid "My Live CV is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to My Live CV through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
 msgstr "My Live CV es un proyecto gratuito y de código abierto construido mayoritariamente por mí y tu apoyo sería gratamente apreciado. Si estás dispuesto a contribuir, solo si te lo puedes permitir, considera realizar una donación por medio de alguna de las plataformas listadas. Adicionalmente, las donaciones a My Live CV por medio de Open Collective están libres de impuestos, ya que el proyecto está financiado por Open Collective Europe."
-
-#: apps/client/src/pages/home/sections/features/index.tsx:108
-msgid "My Live CV is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
-msgstr "My Live CV es un proyecto pasional de más de 3 años de duro trabajo, con ello existen una serie de ideas reiteradas y funcionalidades que han sido construidas hasta la (casi) perfección."
 
 #: apps/client/src/pages/home/sections/contributors/index.tsx:22
 msgid "My Live CV thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
@@ -1380,9 +1368,9 @@ msgstr "Seguridad con autenticación de doble factor"
 msgid "Security"
 msgstr "Seguridad"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:50
-msgid "Self-host with Docker"
-msgstr "Auto alojamiento con Docker"
+#: apps/client/src/pages/home/sections/features/index.tsx:38
+msgid "See how many recruiters have viewed your Live Resume, how long they spent on each section, and what actions they took."
+msgstr ""
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:98
 msgid "Send Email"
@@ -1494,8 +1482,7 @@ msgid "Square"
 msgstr "Cuadrado"
 
 #: apps/client/src/pages/pricing/sections/cards/Product.tsx:34
-msgid ""
-"Start building for free, then add a site plan to go live. Account plans unlock\n"
+msgid "Start building for free, then add a site plan to go live. Account plans unlock\n"
 "additional features."
 msgstr ""
 
@@ -1739,7 +1726,7 @@ msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/sharing.tsx:73
 msgid "URL"
-msgstr "URL"
+msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/shared/url-input.tsx:56
 msgid "URL must start with https://"
@@ -1796,7 +1783,7 @@ msgstr "Visualizaciones"
 #: apps/client/src/pages/builder/_components/sections/shared/section-list-item.tsx:98
 #: apps/client/src/pages/builder/_components/sections/shared/section-list-item.tsx:125
 msgid "Visible"
-msgstr "Visible"
+msgstr ""
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:61
 msgid "We verify your email address only to ensure that we can send you a password reset link in case you forget your password."
@@ -1885,3 +1872,4 @@ msgstr "Aumentar"
 #: apps/client/src/pages/builder/_layout/simple/_components/toolbar.tsx:105
 msgid "Zoom Out"
 msgstr "Disminuir"
+
