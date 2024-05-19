@@ -1,6 +1,7 @@
+import { t } from "@lingui/macro";
 import { CloudSun, Moon, Sun } from "@phosphor-icons/react";
 import { useTheme } from "@reactive-resume/hooks";
-import { Button } from "@reactive-resume/ui";
+import { Button, Tooltip } from "@reactive-resume/ui";
 import { motion, Variants } from "framer-motion";
 import { useMemo } from "react";
 
@@ -23,9 +24,15 @@ export const ThemeSwitch = ({ size = 20 }: Props) => {
     <Button size="icon" variant="ghost" onClick={toggleTheme}>
       <div className="cursor-pointer overflow-hidden" style={{ width: size, height: size }}>
         <motion.div animate={theme} variants={variants} className="flex">
-          <Sun size={size} className="shrink-0" />
-          <CloudSun size={size} className="shrink-0" />
-          <Moon size={size} className="shrink-0" />
+          <Tooltip side="right" content={t({ message: "Light" })}>
+            <Sun size={size} className="shrink-0" />
+          </Tooltip>
+          <Tooltip side="right" content={t({ message: "Auto" })}>
+            <CloudSun size={size} className="shrink-0" />
+          </Tooltip>
+          <Tooltip side="right" content={t({ message: "Dark" })}>
+            <Moon size={size} className="shrink-0" />
+          </Tooltip>
         </motion.div>
       </div>
     </Button>
