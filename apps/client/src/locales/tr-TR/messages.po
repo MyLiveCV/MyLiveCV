@@ -6,17 +6,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: tr\n"
-"Project-Id-Version: reactive-resume\n"
+"Project-Id-Version: mylivecv\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-04-18 00:08\n"
+"PO-Revision-Date: 2024-05-19 06:32\n"
 "Last-Translator: \n"
 "Language-Team: Turkish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: reactive-resume\n"
-"X-Crowdin-Project-ID: 503410\n"
+"X-Crowdin-Project: mylivecv\n"
+"X-Crowdin-Project-ID: 677118\n"
 "X-Crowdin-Language: tr\n"
-"X-Crowdin-File: messages.po\n"
-"X-Crowdin-File-ID: 494\n"
+"X-Crowdin-File: /master/messages.po\n"
+"X-Crowdin-File-ID: 8\n"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:169
 msgid "You have enabled two-factor authentication successfully."
@@ -99,7 +99,7 @@ msgstr "Bu e-posta adresine ve/veya kullanıcı adına sahip bir kullanıcı zat
 
 #: apps/client/src/pages/builder/_components/sections/page.tsx:43
 msgid "A4"
-msgstr "A4"
+msgstr ""
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:270
@@ -653,7 +653,7 @@ msgstr "Şifrenizi mi unuttunuz?"
 #: apps/client/src/pages/builder/_components/sections/page.tsx:32
 #: apps/client/src/pages/builder/_components/sections/page.tsx:40
 msgid "Format"
-msgstr "Format"
+msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/information.tsx:49
 msgid "Found a bug, or have an idea for a new feature?"
@@ -690,7 +690,7 @@ msgstr ""
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:18
 msgid "GitHub"
-msgstr "GitHub"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/statistics/index.tsx:12
 msgid "GitHub Stars"
@@ -707,7 +707,7 @@ msgstr "Gösterge Paneline Git"
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:31
 msgid "Google"
-msgstr "Google"
+msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/picture/options.tsx:207
 msgid "Grayscale"
@@ -877,21 +877,21 @@ msgstr ""
 #: apps/client/src/pages/auth/register/page.tsx:109
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
 msgid "John Doe"
-msgstr "John Doe"
+msgstr ""
 
 #: apps/client/src/pages/auth/register/page.tsx:130
 msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
 msgid "john.doe"
-msgstr "john.doe"
+msgstr ""
 
 #: apps/client/src/pages/auth/register/page.tsx:151
 msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
 msgid "john.doe@example.com"
-msgstr "john.doe@example.com"
+msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/export.tsx:54
 msgid "JSON"
-msgstr "JSON"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:149
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
@@ -1087,10 +1087,6 @@ msgstr "Hata! Sunucu bir hata döndürdü."
 msgid "Open"
 msgstr "Aç"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:47
-msgid "Open Source"
-msgstr "Açık Kaynak"
-
 #: apps/client/src/services/openai/change-tone.ts:30
 #: apps/client/src/services/openai/fix-grammar.ts:28
 #: apps/client/src/services/openai/improve-writing.ts:28
@@ -1150,7 +1146,7 @@ msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/export.tsx:72
 msgid "PDF"
-msgstr "PDF"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/keywords/index.tsx:55
 msgid "Personal notes for each resume"
@@ -1198,11 +1194,7 @@ msgstr "Konum"
 msgid "Position"
 msgstr "Konum"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:97
-msgid "Powered by"
-msgstr "Destekleyen"
-
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:113
+#: apps/client/src/pages/builder/_components/dialogs/profiles.tsx:103
 msgid "Powered by <0>Simple Icons</0>"
 msgstr "<0>Simple Icons</0> tarafından desteklenmektedir"
 
@@ -1259,7 +1251,7 @@ msgstr "Bir sorunu dile getirin"
 #: apps/client/src/pages/public/page.tsx:71
 #: apps/client/src/pages/public/page.tsx:93
 msgid "My Live CV"
-msgstr "My Live CV"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/support/index.tsx:12
 msgid "My Live CV is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to My Live CV through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
@@ -1332,11 +1324,7 @@ msgstr "Özgeçmişler"
 msgid "Resumes Generated"
 msgstr "Oluşturulan Özgeçmişler"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:106
-msgid "Rich in features, not in pricing."
-msgstr "Fiyat açısından değil, özellikler açısından zengin."
-
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:143
+#: apps/client/src/pages/builder/_components/sections/picture/options.tsx:143
 msgid "Rounded"
 msgstr "Yuvarlak"
 
@@ -1380,9 +1368,9 @@ msgstr ""
 msgid "Security"
 msgstr "Güvenlik"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:50
-msgid "Self-host with Docker"
-msgstr "Docker ile kendi kendine barındırma"
+#: apps/client/src/pages/home/sections/features/index.tsx:38
+msgid "See how many recruiters have viewed your Live Resume, how long they spent on each section, and what actions they took."
+msgstr ""
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:98
 msgid "Send Email"
@@ -1470,7 +1458,7 @@ msgstr "Boyut (px cinsinden)"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:249
 msgid "Slug"
-msgstr "Slug"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:22
 msgid "Smart Content Suggestions"
@@ -1494,8 +1482,7 @@ msgid "Square"
 msgstr "Kare"
 
 #: apps/client/src/pages/pricing/sections/cards/Product.tsx:34
-msgid ""
-"Start building for free, then add a site plan to go live. Account plans unlock\n"
+msgid "Start building for free, then add a site plan to go live. Account plans unlock\n"
 "additional features."
 msgstr ""
 
@@ -1562,14 +1549,15 @@ msgstr ""
 msgid "System"
 msgstr "Sistem"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:62
-#: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
+#: apps/client/src/pages/pricing/sections/cards/Product.tsx:128
+msgid "Team size: <0>1 developer</0>"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/sections/template.tsx:19
+#: apps/client/src/pages/builder/_layout/advance/_components/sidebars/right/index.tsx:62
+#: apps/client/src/pages/builder/_layout/simple/_components/left/options.tsx:32
 msgid "Template"
 msgstr "Şablon"
-
-#: apps/client/src/pages/home/sections/templates/index.tsx:9
-msgid "Templates"
-msgstr "Şablonlar"
 
 #: apps/client/src/pages/home/sections/testimonials/index.tsx:68
 msgid "Testimonials"
@@ -1738,7 +1726,7 @@ msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/sharing.tsx:73
 msgid "URL"
-msgstr "URL"
+msgstr ""
 
 #: apps/client/src/pages/builder/_components/sections/shared/url-input.tsx:56
 msgid "URL must start with https://"
@@ -1815,9 +1803,9 @@ msgstr ""
 msgid "Website"
 msgstr "İnternet sitesi"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:34
-msgid "What's new in the latest version"
-msgstr "En son sürümdeki yenilikler"
+#: apps/client/src/pages/home/sections/faq/index.tsx:44
+msgid "What are the benefits of using your website to build a live resume?"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:154
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
