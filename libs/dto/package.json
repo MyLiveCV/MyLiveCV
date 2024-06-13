@@ -9,9 +9,9 @@
     "access": "public"
   },
   "dependencies": {
-    "@swc/helpers": "~0.5.6",
-    "nestjs-zod": "^3.0.0",
     "@reactive-resume/utils": "*",
-    "@reactive-resume/schema": "*"
+    "@reactive-resume/schema": "*",
+    "nestjs-zod": "^3.0.0",
+    "@swc/helpers": "~0.5.11"
   }
 }

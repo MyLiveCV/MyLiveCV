@@ -77,6 +77,9 @@ export const ImportDialog = () => {
   const [validationResult, setValidationResult] = useState<ValidationResult | null>(null);
 
   const form = useForm<FormValues>({
+    defaultValues: {
+      type: ImportType["reactive-resume-json"],
+    },
     resolver: zodResolver(formSchema),
   });
   const filetype = form.watch("type");
@@ -91,16 +94,15 @@ export const ImportDialog = () => {
   }, [filetype]);
 
   const accept = useMemo(() => {
-    if (!filetype) return "";
     if (filetype.includes("json")) return ".json";
     if (filetype.includes("zip")) return ".zip";
     return "";
   }, [filetype]);
 
   const onValidate = async () => {
-    const { file, type } = formSchema.parse(form.getValues());
-
     try {
+      const { file, type } = formSchema.parse(form.getValues());
+
       if (type === ImportType["reactive-resume-json"]) {
         const parser = new ReactiveResumeParser();
         const data = await parser.readFile(file);
@@ -255,11 +257,11 @@ export const ImportDialog = () => {
                   <FormLabel>{t`File`}</FormLabel>
                   <FormControl>
                     <Input
-                      type="file"
                       key={`${accept}-${filetype}`}
+                      type="file"
                       accept={accept}
                       onChange={(event) => {
-                        if (!event.target.files || !event.target.files.length) return;
+                        if (!event.target.files?.length) return;
                         field.onChange(event.target.files[0]);
                       }}
                     />
@@ -278,7 +280,7 @@ export const ImportDialog = () => {
               )}
             />
 
-            {validationResult?.isValid === false && validationResult.errors !== undefined && (
+            {validationResult?.isValid === false && (
               <div className="space-y-2">
                 <Label className="text-error">{t`Errors`}</Label>
                 <ScrollArea orientation="vertical" className="h-[180px]">
@@ -291,7 +293,7 @@ export const ImportDialog = () => {
 
             <DialogFooter>
               <AnimatePresence presenceAffectsLayout>
-                {(!validationResult || false) && (
+                {!validationResult && (
                   <Button type="button" onClick={onValidate}>
                     {t`Validate`}
                   </Button>
@@ -305,7 +307,7 @@ export const ImportDialog = () => {
 
                 {validationResult !== null && validationResult.isValid && (
                   <>
-                    <Button type="button" onClick={onImport} disabled={loading}>
+                    <Button type="button" disabled={loading} onClick={onImport}>
                       {t`Import`}
                     </Button>
 

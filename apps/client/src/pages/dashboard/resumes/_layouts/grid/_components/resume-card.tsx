@@ -1,6 +1,5 @@
 import { t } from "@lingui/macro";
 import {
-  CircleNotch,
   CopySimple,
   FolderOpen,
   Lock,
@@ -21,7 +20,6 @@ import dayjs from "dayjs";
 import { AnimatePresence, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-import { useResumePreview } from "@/client/services/resume/preview";
 import { useDialog } from "@/client/stores/dialog";
 
 import { BaseCard } from "./base-card";
@@ -34,8 +32,6 @@ export const ResumeCard = ({ resume }: Props) => {
   const navigate = useNavigate();
   const { open } = useDialog<ResumeDto>("resume");
   const { open: lockOpen } = useDialog<ResumeDto>("lock");
-
-  const { url, loading } = useResumePreview(resume.id);
 
   const lastUpdated = dayjs().to(resume.updatedAt);
 
@@ -62,37 +58,7 @@ export const ResumeCard = ({ resume }: Props) => {
   return (
     <ContextMenu>
       <ContextMenuTrigger>
-        <BaseCard onClick={onOpen} className="space-y-0">
-          <AnimatePresence presenceAffectsLayout>
-            {loading && (
-              <motion.div
-                layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-              >
-                <CircleNotch
-                  size={64}
-                  weight="thin"
-                  opacity={0.5}
-                  className="animate-spin self-center justify-self-center"
-                />
-              </motion.div>
-            )}
-
-            {!loading && url && (
-              <motion.img
-                layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                loading="lazy"
-                alt={resume.title}
-                className="size-full object-cover"
-                src={`${url}?cache=${new Date().getTime()}`}
-              />
-            )}
-          </AnimatePresence>
-
+        <BaseCard className="space-y-0" onClick={onOpen}>
           <AnimatePresence>
             {resume.locked && (
               <motion.div
@@ -143,7 +109,7 @@ export const ResumeCard = ({ resume }: Props) => {
           </ContextMenuItem>
         )}
         <ContextMenuSeparator />
-        <ContextMenuItem onClick={onDelete} className="text-error">
+        <ContextMenuItem className="text-error" onClick={onDelete}>
           <TrashSimple size={14} className="mr-2" />
           {t`Delete`}
         </ContextMenuItem>
